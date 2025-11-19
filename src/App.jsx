@@ -14,11 +14,9 @@ const instruments = ["♫", "♪", "♩", "♬", "🎵", "🎶"];
 
 export default function App() {
   return (
-    <div className="relative min-h-screen flex flex-col">
-      {/* Enhanced Background */}
+    <div className="relative min-h-screen"> 
+      {/* Enhanced Background and Floating Notes - Keep as is (z-0) */}
       <div className="background-overlay" />
-      
-      {/* Improved Floating Notes */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         {[...Array(25)].map((_, i) => (
           <div
@@ -38,22 +36,29 @@ export default function App() {
         ))}
       </div>
 
-      <Navbar />
+      {/* 1. Fixed Navbar on Top */}
+      <header className="fixed top-0 w-full z-50"> 
+        <Navbar />
+      </header>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex-1 flex flex-col">
-        <main className="flex-1 fade-in">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/teachers" element={<Teachers />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
+      {/* 2. Main Content Wrapper: Add margin/padding to account for fixed Navbar height */}
+      <div className="pt-20 flex flex-col min-h-screen"> 
+        
+        {/* Main Content Area (Routes & Footer) */}
+        <div className="relative z-10 flex-1 flex flex-col">
+          <main className="flex-1 fade-in">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/teachers" element={<Teachers />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </div>
   )

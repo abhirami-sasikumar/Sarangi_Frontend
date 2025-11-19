@@ -1,11 +1,12 @@
 :root {
-  --maroon: #6B0F0F; /* Primary Accent (Traditional) */
-  --deep-maroon: #5A0A0A;
-  --saffron: #FF9933; /* A warm, Indian-inspired orange/amber */
-  --light-saffron: #FFE8CC; 
-  --sand: #F5E5D0; /* Off-white/cream for backgrounds */
-  --text-dark: #2D2D2D;
-  --text-light: #5A5A5A;
+  --navy-blue: #1E3A8A;     /* Primary Navy Blue */
+  --royal-blue: #2563EB;    /* Royal Blue for accents */
+  --bright-yellow: #FACC15; /* Vibrant Yellow */
+  --sunshine-yellow: #FFD700; /* Golden Yellow */
+  --light-yellow: #FEF9C3;  /* Light Yellow for backgrounds */
+  --cream: #FFFBEB;         /* Warm cream for backgrounds */
+  --text-dark: #1E293B;     /* Dark blue-gray for text */
+  --text-light: #64748B;    /* Light blue-gray for secondary text */
 }
 
 /* Global Font and Color Setup */
@@ -17,17 +18,28 @@ body {
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
+  background: var(--cream);
 }
 
-/* Custom Tailwind Colors (Use these in Tailwind classes like text-maroon) */
-.text-maroon { color: var(--maroon); }
-.bg-maroon { background-color: var(--maroon); }
+/* Custom Tailwind Colors */
+.text-navy { color: var(--navy-blue); }
+.bg-navy { background-color: var(--navy-blue); }
+.text-royal-blue { color: var(--royal-blue); }
+.bg-royal-blue { background-color: var(--royal-blue); }
+.text-bright-yellow { color: var(--bright-yellow); }
+.bg-bright-yellow { background-color: var(--bright-yellow); }
+.text-sunshine-yellow { color: var(--sunshine-yellow); }
+.bg-sunshine-yellow { background-color: var(--sunshine-yellow); }
+.bg-light-yellow { background-color: var(--light-yellow); }
+.bg-cream { background-color: var(--cream); }
+.border-navy-blue { border-color: var(--navy-blue); }
+.border-royal-blue { border-color: var(--royal-blue); }
+.border-bright-yellow { border-color: var(--bright-yellow); }
 
 /* --- Typography Enhancements --- */
 
-/* For Headings - Recommended to use a serif font for traditional feel */
 .font-serif-traditional {
-  font-family: 'Playfair Display', 'Times New Roman', serif; /* Use a font that looks classic/formal */
+  font-family: 'Playfair Display', 'Times New Roman', serif;
 }
 
 /* --- App-Level Background & Notes --- */
@@ -36,10 +48,10 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
-  /* Soft gradient and subtle texture */
+  /* Vibrant gradient with yellow and blue tones */
   background: 
-    linear-gradient(to bottom right, var(--sand), #fff8f0),
-    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e0d8c7' fill-opacity='0.4'%3E%3Cpath d='M9.8 19.9l10.1 10 10.1-10 10.1-10L20.2 0 0 10l9.8 9.9zM20.2 20.1L9.8 30.1 0 20l20.2-10 10.1 10 9.8-9.9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    linear-gradient(135deg, var(--cream) 0%, var(--light-yellow) 50%, #E0F2FE 100%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FEF9C3' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* --- Floating Notes Animation (Aesthetic) --- */
@@ -49,11 +61,11 @@ body {
   font-size: 18px;
   opacity: 0.3;
   animation: floatUp 15s linear infinite, colorPulse 10s ease-in-out infinite, gentleSway 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px rgba(255, 153, 51, 0.5)); /* Subtle saffron glow */
+  filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.4)); /* Royal blue glow */
   pointer-events: none;
   user-select: none;
   z-index: 0;
-  color: var(--saffron); /* Notes are saffron for contrast */
+  color: var(--royal-blue); /* Notes are royal blue for contrast */
 }
 
 @keyframes floatUp {
@@ -61,8 +73,8 @@ body {
     transform: translateY(100vh) rotate(0deg) scale(0.8); 
     opacity: 0;
   }
-  10% { opacity: 0.2; }
-  90% { opacity: 0.4; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.5; }
   100% { 
     transform: translateY(-20vh) rotate(360deg) scale(1); 
     opacity: 0;
@@ -70,13 +82,19 @@ body {
 }
 
 @keyframes colorPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.5; }
+  0%, 100% { 
+    opacity: 0.3; 
+    color: var(--royal-blue);
+  }
+  50% { 
+    opacity: 0.6; 
+    color: var(--bright-yellow);
+  }
 }
 
 @keyframes gentleSway {
   0% { transform: translateX(0); }
-  50% { transform: translateX(15px); }
+  50% { transform: translateX(20px); }
   100% { transform: translateX(0); }
 }
 
@@ -88,4 +106,50 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Additional vibrant utility classes */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--royal-blue) 100%);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15);
+}
+
+/* Button styles with new color scheme */
+.btn-primary {
+  background: linear-gradient(135deg, var(--bright-yellow) 0%, var(--sunshine-yellow) 100%);
+  color: var(--navy-blue);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+}
+
+.btn-secondary {
+  background: var(--navy-blue);
+  color: white;
+  border: 2px solid var(--navy-blue);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--royal-blue);
+  border-color: var(--royal-blue);
+  transform: translateY(-2px);
 }
