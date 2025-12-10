@@ -153,3 +153,9 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+.logo-img {
+  height: 70px !important;   /* <-- change this value as you want */
+  width: 60px;
+  object-fit: contain;
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import SarangiLogo from "../assets/Logo.png";
+import SarangiLogo from "../assets/Slogo.png";
 
 const instruments = ["♫", "♪", "♩", "♬"];
 
@@ -82,25 +82,30 @@ export default function Navbar() {
           scrolled ? "shadow-xl border-b border-saffron/30" : "shadow-md"
         }`}
       >
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 flex-shrink-0 relative z-20">
-          {/* ... (Logo content) ... */}
-          <img
-            src={SarangiLogo}
-            alt="Sarangi School of Music Logo"
-            className="h-16 md:h-20 w-auto object-contain flex-shrink-0"
-            style={{ imageRendering: "crisp-edges" }}
-          />
+{/* Logo */}
+<Link to="/" className="flex items-center gap-3 flex-shrink-0 relative z-20">
 
-          <div className="hidden sm:block">
-            <h1 className="text-xl md:text-2xl font-serif-traditional font-bold text-maroon tracking-wider leading-tight">
-              Sarangi School Of Music
-            </h1>
-            <p className="text-[10px] md:text-xs text-gray-500 leading-tight">
-              Thiruvananthapuram • Est. 2000
-            </p>
-          </div>
-        </Link>
+  {/* Separate logo container */}
+  <div className="logo-wrapper flex items-center">
+    <div className="logo-box">
+      <img
+        src={SarangiLogo}
+        alt="Sarangi School of Music Logo"
+        className="logo-img"
+      />
+    </div>
+  </div>
+
+  <div className="hidden sm:block">
+    <h1 className="text-xl md:text-2xl font-serif-traditional font-bold text-maroon tracking-wider leading-tight">
+      Sarangi School Of Music
+    </h1>
+    <p className="text-[10px] md:text-xs text-gray-500 leading-tight">
+      Thiruvananthapuram • Est. 2000
+    </p>
+  </div>
+
+</Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-2">
