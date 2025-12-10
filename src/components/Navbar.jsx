@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import SarangiLogo from "../assets/Logo.png";
+
 const instruments = ["♫", "♪", "♩", "♬"];
 
 const NavItem = ({ to, children, mobile = false }) => (
@@ -14,11 +16,9 @@ const NavItem = ({ to, children, mobile = false }) => (
       } 
       ${mobile ? "block w-full text-left" : "group"}`
     }
-    onClick={mobile ? () => {} : undefined}
   >
     {children}
-    
-    {/* Desktop underline animation (Saffron/Maroon gradient) */}
+
     {!mobile && (
       <span className="absolute left-1/2 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-saffron to-maroon 
                       transition-all duration-300 group-hover:w-full group-hover:left-0 rounded-full"></span>
@@ -30,33 +30,35 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      setScrolled(isScrolled);
+      setScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle click outside to close mobile menu
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Check if the click is outside the menu AND the toggle button
-      if (mobileOpen && !event.target.closest('.mobile-menu-container') && !event.target.closest('.mobile-toggle-button')) {
+      if (
+        mobileOpen && 
+        !event.target.closest(".mobile-menu-container") &&
+        !event.target.closest(".mobile-toggle-button")
+      ) {
         setMobileOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, [mobileOpen]);
 
   return (
-    <header className="relative w-full z-50">
-      {/* Floating Notes Behind Navbar (Uses App.css note styles) */}
+    // Changed header wrapper from relative to fixed/static
+    <header className="fixed top-0 left-0 w-full z-50"> 
+      
+      {/* Floating Notes (Set to absolute inside fixed header) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         {[...Array(15)].map((_, i) => (
           <div
@@ -67,7 +69,6 @@ export default function Navbar() {
               left: `${Math.random() * 100}%`,
               fontSize: `${10 + Math.random() * 16}px`,
               animationDelay: `${Math.random() * 6}s`,
-              // Removed inline color for consistency with App.css. If you need multiple colors, define them in App.css classes.
             }}
           >
             {instruments[Math.floor(Math.random() * instruments.length)]}
@@ -75,18 +76,22 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* Navbar - Using sophisticated colors and styles */}
-      <div className={`backdrop-blur-sm bg-sand/90 sticky top-0 w-full flex justify-between items-center py-4 px-4 md:px-16 z-10 transition-all duration-300 ${
-        scrolled ? 'shadow-xl border-b border-saffron/30' : 'shadow-md'
-      }`}>
-        
-        {/* Logo - More prominent and using saffron/maroon */}
-        <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-          <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-saffron to-maroon
-                          shadow-lg flex items-center justify-center text-white font-bold text-xl md:text-2xl 
-                          border-2 border-white/80 hover:scale-105 transition-transform duration-300">
-            🎶
-          </div>
+      {/* Navbar Container: Changed from sticky to fixed for consistent top-of-page visibility */}
+      <div
+        className={`backdrop-blur-sm bg-sand/90 w-full flex justify-between items-center py-0 px-4 md:px-16 transition-all duration-300 ${
+          scrolled ? "shadow-xl border-b border-saffron/30" : "shadow-md"
+        }`}
+      >
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3 flex-shrink-0 relative z-20">
+          {/* ... (Logo content) ... */}
+          <img
+            src={SarangiLogo}
+            alt="Sarangi School of Music Logo"
+            className="h-16 md:h-20 w-auto object-contain flex-shrink-0"
+            style={{ imageRendering: "crisp-edges" }}
+          />
+
           <div className="hidden sm:block">
             <h1 className="text-xl md:text-2xl font-serif-traditional font-bold text-maroon tracking-wider leading-tight">
               Sarangi School Of Music
@@ -105,8 +110,9 @@ export default function Navbar() {
           <NavItem to="/teachers">Teachers</NavItem>
           <NavItem to="/gallery">Gallery</NavItem>
           <NavItem to="/contact">Contact</NavItem>
+
           <Link
-            to="/anniversary"
+            to="/visit"
             className="ml-4 px-4 py-2.5 rounded-xl text-sm font-semibold 
                        bg-gradient-to-r from-saffron to-amber-700 text-white 
                        hover:from-amber-700 hover:to-saffron transition-all duration-300 
@@ -117,10 +123,10 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Nav Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <Link
-            to="/anniversary"
+            to="/visit"
             className="px-3 py-1.5 rounded-lg text-xs font-medium 
                        bg-gradient-to-r from-saffron to-amber-700 text-white 
                        hover:from-amber-700 hover:to-saffron transition-all duration-300 
@@ -128,6 +134,7 @@ export default function Navbar() {
           >
             🎉 25
           </Link>
+
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -135,15 +142,19 @@ export default function Navbar() {
             }}
             className="text-gray-600 text-2xl focus:outline-none hover:text-maroon transition-colors duration-300 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-light-saffron mobile-toggle-button"
           >
-            {mobileOpen ? '✕' : '☰'}
+            {mobileOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-sand/95 backdrop-blur-lg shadow-xl w-full absolute left-0 top-full z-40 transition-all duration-300 mobile-menu-container ${
-        mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
-      }`}>
+      <div
+        className={`md:hidden bg-sand/95 backdrop-blur-lg shadow-xl w-full absolute left-0 z-40 transition-all duration-300 mobile-menu-container ${
+          mobileOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
         <div className="py-4 px-4 flex flex-col gap-1 border-t border-saffron/30">
           <NavItem to="/" mobile>Home</NavItem>
           <NavItem to="/about" mobile>About</NavItem>
@@ -151,8 +162,7 @@ export default function Navbar() {
           <NavItem to="/teachers" mobile>Teachers</NavItem>
           <NavItem to="/gallery" mobile>Gallery</NavItem>
           <NavItem to="/contact" mobile>Contact</NavItem>
-          
-          {/* Mobile CTA */}
+
           <div className="mt-4 pt-4 border-t border-saffron/30">
             <Link
               to="/visit"
@@ -163,6 +173,7 @@ export default function Navbar() {
             >
               🏫 Visit Campus
             </Link>
+
             <Link
               to="/contact"
               className="block w-full text-center px-4 py-2 rounded-lg text-sm font-medium 

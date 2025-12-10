@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaPhoneAlt, FaMapMarkerAlt, FaClock, FaEnvelope } from "react-icons/fa";
-// Ensure you have custom color classes (maroon, saffron, sand, etc.) defined in your Tailwind config or CSS.
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    // Updated background to use custom sand color palette for consistency
     <footer className="bg-gradient-to-b from-sand to-light-saffron border-t border-maroon/20 relative overflow-hidden">
       
-      {/* Floating Musical Notes - Now using saffron color */}
+      {/* Floating Musical Notes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {[...Array(8)].map((_, i) => (
           <div
@@ -55,7 +53,7 @@ export default function Footer() {
               Kerala's rich cultural heritage.
             </p>
 
-            {/* Contact Details - Icons use maroon, text is clean gray */}
+            {/* Contact Details */}
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3 text-gray-700">
                 <FaMapMarkerAlt className="text-maroon flex-shrink-0" />
@@ -113,7 +111,6 @@ export default function Footer() {
                     className="text-gray-700 hover:text-saffron transition-all duration-300 
                              hover:translate-x-1 hover:font-medium flex items-center gap-2 group"
                   >
-                    {/* Updated bullet point color */}
                     <span className="w-1.5 h-1.5 bg-maroon rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
                     {link.label}
                   </Link>
@@ -127,16 +124,9 @@ export default function Footer() {
             <h4 className="font-serif-traditional font-semibold text-lg text-maroon mb-4 border-b border-saffron/50 pb-2">Our Disciplines</h4>
             <div className="grid grid-cols-2 gap-2 mb-6">
               {[
-                "Carnatic Vocal",
-                "Violin", 
-                "Tabla",
-                "Keyboard",
-                "Mridangam",
-                "Dance",
-                "Art",
-                "Theory"
+                "Carnatic Vocal", "Violin", "Tabla", "Keyboard",
+                "Mridangam", "Dance", "Art", "Theory"
               ].map((course) => (
-                // Course tags using sand/saffron colors
                 <span 
                   key={course}
                   className="text-xs bg-sand/70 text-maroon px-2 py-1 rounded 
@@ -151,18 +141,8 @@ export default function Footer() {
             <h4 className="font-serif-traditional font-semibold text-lg text-maroon mb-4 border-b border-saffron/50 pb-2">Follow Us</h4>
             <div className="flex gap-4 mb-4">
               {[
-                { 
-                  icon: FaInstagram, 
-                  href: "#", 
-                  color: "hover:text-pink-600",
-                  label: "Instagram"
-                },
-                { 
-                  icon: FaFacebook, 
-                  href: "#", 
-                  color: "hover:text-blue-600",
-                  label: "Facebook"
-                },
+                { icon: FaInstagram, href: "#", color: "hover:text-pink-600", label: "Instagram" },
+                { icon: FaFacebook, href: "#", color: "hover:text-blue-600", label: "Facebook" },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -183,7 +163,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Visit Campus CTA - Using maroon/saffron as primary CTA colors */}
+        {/* Visit Campus CTA */}
         <div className="mt-12 p-6 bg-gradient-to-r from-maroon to-deep-maroon rounded-2xl text-center text-white shadow-xl">
           <h4 className="font-serif-traditional text-xl font-semibold mb-2 text-saffron">
             Ready to Begin Your Artistic Journey?

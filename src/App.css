@@ -1,4 +1,5 @@
 :root {
+  /* --- Color Palette --- */
   --maroon: #6B0F0F; /* Primary Accent (Traditional) */
   --deep-maroon: #5A0A0A;
   --saffron: #FF9933; /* A warm, Indian-inspired orange/amber */
@@ -19,15 +20,24 @@ body {
   color: var(--text-dark);
 }
 
-/* Custom Tailwind Colors (Use these in Tailwind classes like text-maroon) */
+/* Custom Tailwind Colors (Use these in Tailwind classes like text-maroon) 
+   Note: Tailwind classes for these should be added to your tailwind.config.js 
+   but since this is a global CSS file, we define them here for direct use if needed. 
+*/
 .text-maroon { color: var(--maroon); }
 .bg-maroon { background-color: var(--maroon); }
+.text-saffron { color: var(--saffron); }
+.bg-saffron { background-color: var(--saffron); }
+.bg-sand { background-color: var(--sand); }
+.bg-light-saffron { background-color: var(--light-saffron); }
+
 
 /* --- Typography Enhancements --- */
 
 /* For Headings - Recommended to use a serif font for traditional feel */
 .font-serif-traditional {
-  font-family: 'Playfair Display', 'Times New Roman', serif; /* Use a font that looks classic/formal */
+  /* Assumes 'Playfair Display' or similar font is linked in index.html */
+  font-family: 'Playfair Display', 'Times New Roman', serif; 
 }
 
 /* --- App-Level Background & Notes --- */
@@ -80,6 +90,51 @@ body {
   100% { transform: translateX(0); }
 }
 
+/* --- UPDATED: Floating Musical Symbol Animation (TOP-TO-BOTTOM) --- */
+/* Custom utility for animation delays (needed for individual floating symbols) */
+.animation-delay-0 { animation-delay: 0s; }
+.animation-delay-2s { animation-delay: 2s; }
+.animation-delay-4s { animation-delay: 4s; }
+.animation-delay-6s { animation-delay: 6s; }
+.animation-delay-3s { animation-delay: 3s; }
+.animation-delay-9s { animation-delay: 9s; }
+.animation-delay-1s { animation-delay: 1s; }
+.animation-delay-7s { animation-delay: 7s; }
+.animation-delay-10s { animation-delay: 10s; }
+
+
+/* Keyframes for the top-to-bottom floating motion */
+@keyframes floatSymbol {
+  0% {
+    /* Start above the viewport */
+    transform: translateY(-20vh) rotate(0deg); 
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9; /* Fade in when visible */
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    /* End far below the viewport */
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0; /* Fade out as it leaves */
+  }
+}
+
+/* Custom Tailwind utility class to apply the animation */
+.animate-float-symbol {
+  /* Increased duration to 35s to make the drift feel slower and cover more area */
+  animation: floatSymbol 35s linear infinite; 
+  /* 🌟 IMPORTANT: This needs to be position: fixed to float across the whole page, 
+     but since it's inside a 'relative' parent, 'absolute' will work on the page. 
+     The symbols are already 'absolute' in Home.js, which is correct for this setup. 
+     We are now relying on the main container being the reference. */
+}
+
+
+
 /* --- Other Utility Classes --- */
 .fade-in {
   animation: fadeIn 0.5s ease-out forwards;
@@ -88,4 +143,13 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility to hide horizontal scrollbar for the course section on Home */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }

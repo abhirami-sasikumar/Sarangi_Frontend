@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function CourseCard({ course }) {
-  // Key Changes: amber/rose -> saffron/maroon/sand
   return (
     <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl 
       border border-sand hover:border-light-saffron transition-all duration-500 
@@ -50,7 +49,7 @@ export default function CourseCard({ course }) {
                      transform hover:-translate-y-0.5 transition-all duration-300
                      hover:from-deep-maroon hover:to-maroon flex items-center gap-2"
           >
-            <span>Learn More</span>
+            <span>Inquire</span>
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </Link>
         </div>

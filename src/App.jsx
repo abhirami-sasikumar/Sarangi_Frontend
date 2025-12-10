@@ -1,21 +1,22 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import About from './pages/About'
-import Courses from './pages/Courses'
-import Teachers from './pages/Teachers'
-import Gallery from './pages/Gallery'
-import Contact from './pages/Contact'
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Courses from "./pages/Courses";
+import Teachers from "./pages/Teachers";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
+import "./App.css";
 
-const instruments = ["♫", "♪", "♩", "♬", "🎵", "🎶"]; 
+// Musical notes for floating aesthetic
+const instruments = ["♫", "♪", "♩", "♬", "🎵", "🎶"];
 
 export default function App() {
   return (
     <div className="relative min-h-screen flex flex-col">
-      {/* Enhanced Background */}
+      {/* Enhanced Background (Uses App.css styles) */}
       <div className="background-overlay" />
       
       {/* Improved Floating Notes */}
@@ -38,11 +39,12 @@ export default function App() {
         ))}
       </div>
 
-      <Navbar />
+      {/* Navbar is fixed, so it needs to be outside the main scrolling area */}
+      <Navbar /> 
 
-      {/* Main Content */}
+      {/* Main Content: We add pt-24 here to push content below the fixed Navbar */}
       <div className="relative z-10 flex-1 flex flex-col">
-        <main className="flex-1 fade-in">
+        <main className="flex-1 fade-in pt-24"> 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -50,6 +52,7 @@ export default function App() {
             <Route path="/teachers" element={<Teachers />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+             {/* You may add a route for /anniversary or /visit if needed */}
           </Routes>
         </main>
 

@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 export default function GalleryGrid({ items = [] }) {
   const [selectedImage, setSelectedImage] = useState(null)
 
-  // Key Changes: amber/rose -> saffron/maroon
   return (
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
@@ -15,7 +14,7 @@ export default function GalleryGrid({ items = [] }) {
                      transform hover:-translate-y-2 cursor-pointer"
             onClick={() => setSelectedImage(item)}
           >
-            {/* Image Container */}
+            {/* Image Container (Placeholder/Image) */}
             <div className="w-full h-full bg-gradient-to-br from-saffron/30 to-maroon/30 
                           flex items-center justify-center">
               {item.url ? (
@@ -35,7 +34,6 @@ export default function GalleryGrid({ items = [] }) {
                           flex items-end p-4">
               <div className="text-white">
                 <h3 className="font-semibold text-sm mb-1">{item.title || 'Event Photo'}</h3>
-                {/* Text color changed to match theme */}
                 <p className="text-light-saffron text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   {item.category || 'Click to view'}
                 </p>

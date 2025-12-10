@@ -1,16 +1,43 @@
 import React from 'react'
-// Assuming TeacherCard is updated to use the custom palette
 import TeacherCard from '../components/TeacherCard' 
 
+// --- Data Definitions (UPDATED CONTENT) ---
 const teachers = [
-  // Expanded data for better demo
-  { name: 'Rajeswari Biju', specialization: 'Carnatic Vocal', experience: 20, initials: 'RB', bio: 'A master vocalist and composer, leading the Carnatic vocal department since 2005.' },
-  { name: 'Bhadra Sarangi', specialization: 'Violin', experience: 15, initials: 'BS', bio: 'Specializes in bowing techniques and performance readiness, fostering student confidence.' },
-  { name: 'Vimal Kumar', specialization: 'Tabla & Rhythm', experience: 18, initials: 'VK', bio: 'Expert in both North and South Indian percussion theory and practical application.' },
-]
+  { 
+    name: 'Gana Ratnam Smt. Rema Devi', 
+    specialization: 'Carnatic Vocal', 
+    experience: 35, 
+    initials: 'RD', 
+    bio: 'The Principal Guru, trained in the prestigious Semmangudi tradition. She leads the vocal department with three decades of experience.',
+    specialties: ['Kriti Analysis', 'Raga Alapana', 'Performance Prep']
+  },
+  { 
+    name: 'Vidwan Harish P. Nair', 
+    specialization: 'Mridangam & Percussion', 
+    experience: 22, 
+    initials: 'HN', 
+    bio: 'A noted performer and expert in Laya Vinyasam and Konnakol, focusing on traditional rhythmic complexities.',
+    specialties: ['Konnakol', 'Thani Avartanam', 'Ganjira']
+  },
+  { 
+    name: 'Smt. Kavitha Menon', 
+    specialization: 'Bharatanatyam', 
+    experience: 16, 
+    initials: 'KM', 
+    bio: 'Trained in the Kalakshetra style, she focuses on purity of line, precision in Adavus, and emotional expression (Abhinaya).',
+    specialties: ['Abhinaya', 'Nattuvangam', 'Adavu Practice']
+  },
+  { 
+    name: 'Vaidyanathan Swami', 
+    specialization: 'Kerala Violin & Theory', 
+    experience: 28, 
+    initials: 'VS', 
+    bio: 'Specializes in the unique sound and technique of Kerala-style Carnatic violin, bridging theory and practice.',
+    specialties: ['Bani Styles', 'Music Theory', 'Advanced Composition']
+  },
+];
 
 export default function Teachers() {
-  // Key Changes: Typography and color updates
   return (
     <div className="bg-light-saffron py-20 px-6">
       <div className="container mx-auto max-w-7xl">
@@ -23,7 +50,6 @@ export default function Teachers() {
         </p>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* TeacherCard must be updated with the custom color palette */}
           {teachers.map((t, i) => (
             <TeacherCard key={i} teacher={t} />
           ))}

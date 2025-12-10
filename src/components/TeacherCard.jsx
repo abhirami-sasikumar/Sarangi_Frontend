@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function TeacherCard({ teacher }) {
-  // Key Changes: amber/rose -> saffron/maroon/sand
   return (
     <div className="group bg-white rounded-2xl p-6 text-center shadow-lg 
       border border-sand hover:border-light-saffron transition-all duration-500 
@@ -9,7 +8,6 @@ export default function TeacherCard({ teacher }) {
 
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        {/* Swapped colors for abstract blur */}
         <div className="absolute -right-4 -top-4 w-20 h-20 bg-saffron/70 rounded-full blur-xl"></div>
         <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-maroon/70 rounded-full blur-xl"></div>
       </div>
@@ -24,7 +22,6 @@ export default function TeacherCard({ teacher }) {
           </div>
           {/* Experience badge */}
           {teacher.experience && (
-            // Badge color set to Saffron
             <div className="absolute -bottom-2 -right-2 bg-saffron text-maroon text-xs 
                           px-2 py-1 rounded-full font-bold shadow-md">
               {teacher.experience}+ yrs
@@ -49,7 +46,6 @@ export default function TeacherCard({ teacher }) {
         {teacher.specialties && (
           <div className="flex flex-wrap gap-1 justify-center mb-4">
             {teacher.specialties.slice(0, 3).map((specialty, index) => (
-              // Specialty tags use light-saffron/maroon
               <span key={index} className="text-xs bg-light-saffron text-maroon 
                          px-2 py-1 rounded-full">
                 {specialty}

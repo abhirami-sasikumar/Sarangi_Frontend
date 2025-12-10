@@ -16,7 +16,6 @@ export default function Contact() {
     setForm({ name: '', email: '', message: '' }); // Clear form on success
   }
 
-  // Key Changes: General color updates to saffron/maroon
   return (
     <div className="bg-sand py-20 px-6">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 max-w-7xl">

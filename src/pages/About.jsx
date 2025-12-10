@@ -2,7 +2,6 @@ import React from 'react'
 import { FaGraduationCap, FaHandsHelping, FaHistory, FaBullseye } from 'react-icons/fa';
 
 export default function About() {
-  // Key Changes: Asymmetrical layout, custom color usage
   return (
     <div className="bg-sand py-20 px-6">
         <div className="container mx-auto max-w-7xl">

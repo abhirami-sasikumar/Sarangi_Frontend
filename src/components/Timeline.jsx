@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function Timeline({ events = [] }) {
-  // Key Changes: amber/rose -> saffron/maroon
   return (
     <div className="relative">
       {/* Timeline line */}
