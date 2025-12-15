@@ -245,194 +245,191 @@ export default function Home() {
 
 
       {/* HERO SECTION (MODIFIED: pt-16 reduced to pt-4) */}
-<section className="relative pt-8 pb-28 px-6 md:px-16 lg:px-24">
-            <div className="max-w-7xl mx-auto">
-                
-                {/* 1. TOP SECTION: Tagline & Affiliation (Centered) */}
-                <div className="text-center mb-10 space-y-4">
-                    
-                    {/* Affiliation: Now at the absolute top for immediate trust */}
-                    <div className="inline-block px-6 py-3 bg-maroon text-saffron font-bold rounded-lg shadow-2xl flex items-center justify-center text-lg transform hover:scale-105 transition-transform duration-300 border-2 border-saffron animate-shake-in">
-                        {/* <span className="mr-2 text-2xl">🏆</span>  */}
-                        Affiliated with Kerala Sangeetha Nataka Academy
-                    </div>
+<section className="relative pt-6 pb-16 px-6 md:px-16 lg:px-24">
+  <div className="max-w-7xl mx-auto">
 
-                    {/* Tagline */}
-                    {/* <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-light-saffron border-2 border-saffron/80 shadow-lg animate-fade-in-down">
-                        <span className="w-2.5 h-2.5 bg-maroon rounded-full mr-3 animate-pulse"></span>
-                        <span className="text-maroon text-base font-semibold tracking-wider">
-                            DUAL EXCELLENCE • Offline & Online Learning
-                        </span>
-                    </div> */}
+    {/* TIER 1 — TRUST + HEADLINE */}
+    <div className="text-center mb-8 space-y-4">
 
-                    {/* Main Heading (Now Centered and More Focused) */}
-                    <h1 className="text-6xl md:text-7xl xl:text-8xl font-black leading-tight font-serif-traditional text-maroon animate-slide-in-down max-w-5xl mx-auto">
-                        <span className="text-saffron block">25 Years of Authentic </span>
-                        Indian Classical Excellence.
-                    </h1>
+      <div className="inline-block px-6 py-2 bg-maroon text-saffron font-bold rounded-lg shadow-xl border-2 border-saffron">
+        Affiliated with Kerala Sangeetha Nataka Academy
+      </div>
+
+      <h1 className="text-5xl md:text-6xl xl:text-7xl font-black font-serif-traditional text-maroon leading-tight max-w-4xl mx-auto">
+        <span className="text-saffron block">25 Years of Authentic</span>
+        Indian Classical Excellence
+      </h1>
+
+      {/* Unified Feature Bar */}
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 bg-sand border-2 border-saffron rounded-xl p-4 max-w-4xl mx-auto shadow-lg">
+        <div className="flex items-center justify-center text-maroon font-semibold">
+          🗓️ Established in 2000
+        </div>
+        <div className="flex items-center justify-center text-maroon font-semibold">
+          🌍 No Age Barrier
+        </div>
+        <div className="flex items-center justify-center text-maroon font-semibold">
+          🕒 Flexible Timings
+        </div>
+      </div>
+    </div>
+
+    {/* TIER 2 — IMAGE + CONTENT */}
+    <div className="grid lg:grid-cols-12 gap-10 items-center">
+
+      {/* Image Column */}
+      <div className="lg:col-span-5 relative">
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand">
+          <div className="w-full h-[420px] bg-gradient-to-br from-maroon/80 to-saffron/60 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <div className="text-center text-white p-8 rounded-2xl bg-maroon/70 border-4 border-saffron shadow-xl">
+                <div className="text-7xl mb-3">🎻</div>
+                <div className="text-2xl font-black font-serif-traditional">
+                  Artistic Mastery
                 </div>
-
-                {/* 2. MIDDLE SECTION: Key Feature Row */}
-                <div className="flex flex-wrap justify-center gap-6 mb-16 animate-fade-in">
-                    {/* Established Badge */}
-                    <div className="px-5 py-3 bg-saffron/90 text-maroon font-bold rounded-xl shadow-lg flex items-center border-b-4 border-maroon">
-                        <span className="mr-2 text-xl">🗓️</span> 
-                        Established in 2000
-                    </div>
-                    {/* No Age Barrier */}
-                    <div className="px-5 py-3 border-2 border-saffron text-maroon bg-white rounded-xl font-semibold shadow-inner flex items-center">
-                        <span className="mr-2">🌍</span> 
-                        No Age Barrier (All are welcome!)
-                    </div>
-                    {/* Convenient Class Timing */}
-                    <div className="px-5 py-3 border-2 border-saffron text-maroon bg-white rounded-xl font-semibold shadow-inner flex items-center">
-                        <span className="mr-2">🕒</span> 
-                        Convenient Class Timing
-                    </div>
+                <div className="text-sm mt-1">
+                  Offline Mentorship • Online Flexibility
                 </div>
-
-                {/* 3. BOTTOM SECTION: Image & Detailed Content (Reversed Grid) */}
-                <div className="grid lg:grid-cols-12 gap-12 items-center">
-
-                    {/* Left Column: Visual (Now Takes 5/12) */}
-                    <div className="lg:col-span-5 relative transform animate-fade-in-left">
-                        
-                        {/* Image Container */}
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand/80 transition-shadow hover:shadow-maroon/30">
-                            <div className="w-full h-[550px] bg-gradient-to-br from-maroon/80 to-saffron/60 flex items-center justify-center">
-                                {/* Overlay for text and visual focus */}
-                                <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
-                                    <div className="text-center text-white p-10 rounded-2xl bg-maroon/70 backdrop-blur-md shadow-2xl border-4 border-saffron transform rotate-1 transition-transform hover:rotate-0">
-                                        <div className="text-8xl mb-4">🎻</div>
-                                        <div className="text-3xl font-black font-serif-traditional">
-                                            Artistic Mastery
-                                        </div>
-                                        <div className="text-xl mt-2 font-light">
-                                            Offline Mentorship | Online Flexibility
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Badges positioned for maximum impact (Now placed here to be near the visual) */}
-                        <Badge
-                            top="-4"
-                            right="-4"
-                            bgColor="bg-maroon"
-                            icon="🎓"
-                            count="25+"
-                            text="Years Experience"
-                        />
-                        <Badge
-                            bottom="-4"
-                            left="-4"
-                            bgColor="bg-saffron"
-                            icon="👥"
-                            count="500+"
-                            text="Students Trained"
-                        />
-                    </div>
-                    
-                    {/* Right Column: Detailed Introductory Content & CTA (Now Takes 7/12) */}
-                    <div className="lg:col-span-7 space-y-6 animate-slide-in-right">
-                        
-                        <h2 className="text-4xl font-extrabold text-maroon font-serif-traditional">
-                            Forge Your Legacy: Sarangi School of Music
-                        </h2>
-                        
-                        {/* Detailed Introductory Content */}
-                        <div className="text-lg text-gray-700 leading-relaxed max-w-xl space-y-3 pt-4 border-l-4 border-saffron pl-4 bg-sand/50 rounded-lg">
-                            <p className="text-base">
-                                We are Trivandrum's premier center for authentic, high-quality instruction in Indian performing arts, offering both traditional in-person classes and the flexibility of **online sessions**.
-                            </p>
-                            <p className="font-semibold text-gray-800 text-base">
-                                We offer classes across all levels in:
-                            </p>
-                            <ul className="list-disc list-inside ml-4 grid grid-cols-2 gap-x-4 text-sm text-maroon font-medium">
-                                <li>Vocal Music (Carnatic, Bhajan)</li>
-                                <li>Classical Dance (Bharatanatyam, Mohiniyattam, Kuchipudi)</li>
-                                <li>Instrumental Music (Violin, Veena, Mridangam, Tabla)</li>
-                                <li>Other Arts (Keyboard, Drawing, Theory)</li>
-                            </ul>
-                            <p className="text-base pt-2 italic">
-                                Our commitment is to preserve and impart the deepest nuances of classical art under the guidance of accomplished Gurus.
-                            </p>
-                        </div>
-                        
-                        {/* Single Strong CTA Button */}
-                        <div className="pt-4">
-                            <Link
-                                to="/contact"
-                                className="px-10 py-4 bg-gradient-to-r from-saffron to-amber-700 text-white rounded-lg font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 text-center inline-flex items-center justify-center text-lg border-2 border-maroon"
-                            >
-                                <span className="mr-3 text-2xl">enroll now</span>
-                                <span className="w-3 h-3 bg-white rounded-full animate-ping"></span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-      {/* ... (WHY OFFLINE MATTERS SECTION) ... */}
-      <section className="py-20 px-6 md:px-16 lg:px-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto relative">
-          <SectionTitleBlock
-            pretitle="Our Core Philosophy"
-            title="The Guru's Physical Presence"
-            subtitle="Why the traditional, face-to-face setting is the only path to mastery in classical arts."
-            color="text-maroon"
-            className="text-center"
-          />
-
-          <div className="grid lg:grid-cols-3 gap-8 pt-10">
-            {/* Quote Sidebar 1 (Left) - NOTE: This section's text implies ONLY offline, which conflicts with the Hero. You might want to update this philosophy block to support the hybrid model if it's true. I'll keep the original text for now as per your request but flag the inconsistency. */}
-            <div className="p-6 bg-sand border-l-4 border-saffron shadow-lg rounded-lg self-start sticky top-20 hidden lg:block">
-              <p className="text-lg italic text-gray-800 font-serif-traditional">
-                "The rhythm of a Mridangam is felt through the floor. The
-                micro-tonal corrections of a Swaram must be heard in a pure
-                acoustic space. This connection is lost online."
-              </p>
-              <p className="text-sm font-semibold text-maroon mt-4">
-                — Vidwan Harish P. Nair, Percussion Guru
-              </p>
-            </div>
-
-            {/* Centerpiece: Layered Visual and Pull Quote */}
-            <div className="lg:col-span-2 relative">
-              {/* Background Placeholder Image */}
-              <div className="h-[450px] w-full bg-gradient-to-tr from-saffron/30 to-maroon/20 rounded-2xl shadow-xl border-4 border-sand/50">
-                {/* Visual: Teacher and Student in action (Placeholder) */}
-                <div className="absolute inset-0 flex items-center justify-center text-maroon/50 text-9xl">
-                  📸
-                </div>
-              </div>
-
-              {/* Overlapping Pull Quote */}
-              <div className="absolute -bottom-16 md:-right-8 p-8 md:p-12 bg-maroon text-white rounded-xl shadow-2xl w-full md:w-2/3 border-4 border-saffron transform -rotate-1">
-                <span className="text-saffron text-6xl block mb-2 leading-none">
-                  “
-                </span>
-                <h4 className="text-2xl font-serif-traditional italic font-light leading-snug">
-                  The true depth of classical art is transferred not just through
-                  sound, but through shared silence, observation, and the
-                  physical presence of the Guru.
-                </h4>
-                <Link
-                  to="/visit"
-                  className="mt-6 inline-flex items-center text-saffron hover:text-white font-semibold transition-colors"
-                >
-                  Experience the difference in person →
-                </Link>
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+        <Badge
+          top="-4"
+          right="-4"
+          bgColor="bg-maroon"
+          icon="🎓"
+          count="25+"
+          text="Years"
+        />
+        <Badge
+          bottom="-4"
+          left="-4"
+          bgColor="bg-saffron"
+          icon="👥"
+          count="500+"
+          text="Students"
+        />
+      </div>
+
+      {/* Content Column */}
+      <div className="lg:col-span-7 space-y-5">
+        <h2 className="text-3xl font-extrabold text-maroon font-serif-traditional">
+          Forge Your Legacy at Sarangi School of Music
+        </h2>
+
+        <div className="text-base text-gray-700 leading-relaxed space-y-3 border-l-4 border-saffron pl-4 bg-sand/60 rounded-lg">
+          <p>
+            Trivandrum’s premier institution for authentic Indian classical arts,
+            offering both traditional offline mentorship and structured online learning.
+          </p>
+
+          <ul className="list-disc list-inside grid grid-cols-2 gap-x-4 text-sm text-maroon font-medium">
+            <li>Vocal Music</li>
+            <li>Classical Dance</li>
+            <li>Instrumental Arts</li>
+            <li>Theory & Drawing</li>
+          </ul>
+
+          <p className="italic text-sm">
+            Guided by accomplished Gurus, preserving tradition with discipline.
+          </p>
+        </div>
+
+        <Link
+          to="/contact"
+          className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-saffron to-amber-700 text-white rounded-lg font-bold shadow-lg hover:-translate-y-1 transition-all border-2 border-maroon"
+        >
+          Begin Your Musical Journey →
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   {/* 2. NEW SECTION: ANNUAL ARPANA (MUSICAL OFFERINGS) - REVISED FOR MAROON BG & HIGH CONTRAST */}
+    <section className="py-20 px-6 md:px-16 lg:px-24 bg-maroon relative">
+  <div className="max-w-7xl mx-auto">
+
+    <div className="text-center mb-12">
+      <p className="text-sm font-medium text-saffron uppercase tracking-widest">
+        Sacred Annual Tradition
+      </p>
+      <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional text-saffron">
+        Arpanam — Musical Offerings
+      </h2>
+      <p className="text-white max-w-2xl mx-auto mt-3">
+        Ceremonial performances rooted in devotion, tradition, and legacy.
+      </p>
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-10">
+
+      {/* FEATURED EVENT */}
+      <div className="lg:col-span-2 bg-sand p-10 rounded-3xl shadow-2xl border-t-8 border-saffron">
+        <div className="flex items-center space-x-4 mb-5">
+          <div className="text-6xl text-saffron font-serif-traditional">ॐ</div>
+          <div>
+            <h3 className="text-3xl font-extrabold text-maroon font-serif-traditional">
+              Tyagaraja Aradhana
+            </h3>
+            <p className="text-sm uppercase text-gray-500">
+              Pancharatna Keerthanam
+            </p>
+          </div>
+        </div>
+
+        <p className="text-gray-700 leading-relaxed mb-3">
+          A sacred annual homage to Saint Tyagaraja, uniting musicians in a
+          collective rendering of the Pancharatna Kritis.
+        </p>
+
+        <p className="italic font-semibold text-gray-800">
+          A cornerstone of Sarangi’s spiritual and musical lineage.
+        </p>
+
+        <div className="mt-6 flex justify-between text-sm border-t border-saffron/40 pt-3">
+          <span className="font-bold text-maroon">17+ Years</span>
+          <span className="text-gray-500">📍 Keraladithyapuram</span>
+        </div>
+      </div>
+
+      {/* SECONDARY EVENT */}
+      <div className="bg-sand p-8 rounded-3xl shadow-xl border-t-8 border-saffron">
+        <div className="flex items-center space-x-3 mb-4">
+          <div className="text-5xl text-saffron">𛰪</div>
+          <div>
+            <h3 className="text-2xl font-extrabold text-maroon font-serif-traditional">
+              Mookambika Sangeetarchana
+            </h3>
+            <p className="text-xs uppercase text-gray-500">
+              Annual Devotional Pilgrimage
+            </p>
+          </div>
+        </div>
+
+        <p className="text-gray-700 text-sm leading-relaxed mb-3">
+          A 15-hour continuous musical offering at Kollur Mookambika Temple,
+          invoking blessings of Saraswati.
+        </p>
+
+        <p className="italic font-semibold text-gray-800 text-sm">
+          Performed every May 20th.
+        </p>
+
+        <div className="mt-5 flex justify-between text-sm border-t border-saffron/40 pt-3">
+          <span className="font-bold text-maroon">12+ Years</span>
+          <span className="text-gray-500">📅 May 20</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
       {/* ... (COURSES SECTION) ... */}
       <section className="py-10 px-6 md:px-16 lg:px-24 bg-light-saffron relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
