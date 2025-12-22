@@ -430,181 +430,358 @@ export default function Home() {
 
 
 
-      {/* ... (COURSES SECTION) ... */}
-      <section className="py-10 px-6 md:px-16 lg:px-24 bg-light-saffron relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <SectionTitleBlock
-            pretitle="Our Disciplines"
-            title="Traditional & Contemporary Arts"
-            subtitle="A curated list of courses taught by dedicated gurus at our campus."
-            color="text-maroon"
-          />
+{/* ... (COURSES SECTION) ... */}
+<section className="py-10 px-6 md:px-16 lg:px-24 bg-light-saffron relative overflow-hidden">
+  <div className="max-w-7xl mx-auto">
+    <SectionTitleBlock
+      pretitle="Our Disciplines"
+      title="Traditional & Contemporary Arts"
+      subtitle="A curated list of courses taught by dedicated gurus at our campus."
+      color="text-maroon"
+    />
 
-          <div className="grid lg:grid-cols-5 gap-8">
-            {/* Left Column: Pinned Featured Course (Vertical Focus) */}
-            <div className="lg:col-span-2 bg-maroon p-8 rounded-2xl shadow-xl sticky top-20 h-fit border-b-8 border-saffron">
-              <p className="text-saffron font-bold uppercase mb-2">
-                Featured Discipline
-              </p>
-              <h3 className="text-3xl font-serif-traditional text-white mb-4">
-                {featuredCourse.title}
-              </h3>
-              <p className="text-sand mb-6 leading-relaxed">
-                {featuredCourse.description}
-              </p>
-
-              <ul className="space-y-3 mb-6 text-white/90">
-                <li className="flex items-center">
-                  <span className="text-saffron mr-3">✓</span> One-on-one
-                  sessions
-                </li>
-                <li className="flex items-center">
-                  <span className="text-saffron mr-3">✓</span> Regular stage
-                  performances
-                </li>
-                <li className="flex items-center">
-                  <span className="text-saffron mr-3">✓</span> Advanced
-                  certification available
-                </li>
-              </ul>
-
-              <Link
-                to="/contact"
-                className="inline-block w-full text-center px-6 py-3 bg-saffron text-maroon font-bold rounded-lg shadow-md hover:shadow-lg transition-all"
-              >
-                Inquire about {featuredCourse.title}
-              </Link>
-            </div>
-
-            {/* Right Column: Scrollable Course Categories (Horizontal Scroll) */}
-            <div className="lg:col-span-3 space-y-12">
-              {categories.map((category) => (
-                <div key={category}>
-                  <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-4 border-b-2 border-saffron pb-1">
-                    {category}
-                  </h4>
-
-                  <div className="flex overflow-x-auto space-x-6 pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 scrollbar-hide">
-                    {groupedCourses[category].map((course, index) => (
-                      <div
-                        key={index}
-                        className="flex-shrink-0 w-64 bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-shadow duration-300"
-                      >
-                        <div className="text-3xl mb-3 text-saffron">
-                          {course.icon}
-                        </div>
-                        <h5 className="text-lg font-bold text-maroon mb-1">
-                          {course.title}
-                        </h5>
-                        <p className="text-gray-600 text-sm italic">
-                          {course.description}
-                        </p>
-                        <Link
-                          to="/contact"
-                          className="mt-4 inline-block text-sm font-medium text-maroon hover:text-saffron transition-colors"
-                        >
-                          View Details →
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
+    <div className="grid lg:grid-cols-3 gap-8">
+      {/* Classical Dance */}
+      <div>
+        <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-6 border-b-2 border-saffron pb-2">
+          Classical Dance
+        </h4>
+        <div className="space-y-4">
+          {["Bharatanatyam", "Mohiniyattam", "Kuchipudi"].map((dance, index) => (
+            <div key={dance} className="bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start gap-4">
+                <div className="bg-saffron/20 p-3 rounded-lg">
+                  <span className="text-2xl text-maroon">
+                    {["🕉️", "🌸", "🎭"][index]}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ... (FACILITIES SECTION) ... */}
-      <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <SectionTitleBlock
-            pretitle="The Sarangi Advantage"
-            title="Technical Specification: Our Campus"
-            subtitle="A transparent look at the dedicated infrastructure supporting your artistic journey."
-            color="text-maroon"
-            className="mb-12"
-          />
-
-          <div className="bg-sand p-8 rounded-2xl shadow-2xl border-4 border-maroon/50">
-            <h3 className="text-2xl font-serif-traditional text-maroon border-b pb-4 mb-6 border-saffron/50">
-              Campus Infrastructure Summary
-            </h3>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {facilities.map((facility, index) => (
-                <div key={index} className="border-l-4 border-saffron pl-4">
-                  <div className="text-xl text-maroon font-bold flex items-center mb-1">
-                    <span className="mr-2 text-2xl text-saffron">
-                      {facility.icon}
-                    </span>
-                    {facility.title}
-                  </div>
-                  <p className="text-gray-700 italic text-sm mb-2">
-                    {facility.fact}
+                <div>
+                  <h5 className="font-bold text-lg text-maroon mb-1">{dance}</h5>
+                  <p className="text-gray-600 text-sm">
+                    {[
+                      "Ancient temple dance form from Tamil Nadu",
+                      "Lyrical dance from Kerala with swaying movements",
+                      "Dynamic dance-drama from Andhra Pradesh"
+                    ][index]}
                   </p>
-                  <ul className="text-xs text-gray-500 list-disc list-inside ml-2">
-                    {facility.details.map((detail, idx) => (
-                      <li key={idx}>{detail}</li>
-                    ))}
-                  </ul>
                 </div>
-              ))}
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
 
-            <div className="mt-8 pt-6 border-t border-maroon/20 text-center">
-              <p className="text-sm text-gray-600">
-                Every detail is designed for distraction-free, high-fidelity
-                artistic education.
+      {/* Classical Music & Instrumental */}
+      <div>
+        <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-6 border-b-2 border-saffron pb-2">
+          Music
+        </h4>
+        <div className="space-y-4">
+          {[
+            {name: "Carnatic Vocal", desc: "Training in raga, tala & compositions", icon: "🎵"},
+            {name: "Devotional Music", desc: "Bhajans & spiritual hymns", icon: "🙏"},
+            {name: "Violin", desc: "Carnatic style & accompaniment", icon: "🎻"},
+            {name: "Keyboard/Piano", desc: "Indian classical & Western techniques", icon: "🎹"},
+            {name: "Veena", desc: "Ancient string instrument training", icon: "🪕"}
+          ].map((item, index) => (
+            <div key={item.name} className="bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start gap-4">
+                <div className="bg-saffron/20 p-3 rounded-lg">
+                  <span className="text-2xl text-maroon">{item.icon}</span>
+                </div>
+                <div>
+                  <h5 className="font-bold text-lg text-maroon mb-1">{item.name}</h5>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Percussion & Fine Arts */}
+      <div>
+        <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-6 border-b-2 border-saffron pb-2">
+          Percussion & Arts
+        </h4>
+        <div className="space-y-4">
+          {[
+            {name: "Tabla", desc: "North Indian percussion training", icon: "🥁"},
+            {name: "Mridangam", desc: "Carnatic rhythm & complex patterns", icon: "🪘"},
+            {name: "Drawing & Painting", desc: "Traditional & contemporary art forms", icon: "🎨"}
+          ].map((item, index) => (
+            <div key={item.name} className="bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start gap-4">
+                <div className="bg-saffron/20 p-3 rounded-lg">
+                  <span className="text-2xl text-maroon">{item.icon}</span>
+                </div>
+                <div>
+                  <h5 className="font-bold text-lg text-maroon mb-1">{item.name}</h5>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+     
+      {/* ... (TIMELINE SECTION) ... */}
+{/* TIMELINE SECTION - UPDATED with brighter text */}
+<section className="py-20 px-6 md:px-16 lg:px-24 bg-gradient-to-br from-maroon to-deep-maroon text-white">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional mb-4 text-white">
+        Our Journey of Excellence
+      </h2>
+      <p className="text-xl text-saffron font-medium">
+        Milestones at Sarangi School of Music (Keraladithyapuram, Trivandrum)
+      </p>
+    </div>
+
+    <div className="relative">
+      {/* Timeline Vertical Line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-saffron/50 h-full rounded-full hidden md:block"></div>
+      
+      {/* Timeline for mobile - show on left side */}
+      <div className="absolute left-4 w-1 bg-saffron/50 h-full rounded-full md:hidden"></div>
+
+      <div className="space-y-12">
+        {/* 2000 - Establishment (LEFT SIDE on desktop) */}
+        <div className="relative flex">
+          <div className="hidden md:block w-1/2 pr-12 text-right">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2000</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Foundation & Establishment
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Sarangi School of Music was founded in Keraladithyapuram, 
+                marking the beginning of over two decades of dedicated arts 
+                education in Trivandrum. Our journey began with a focus on 
+                traditional Carnatic vocal training.
+              </p>
+            </div>
+          </div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2000</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Foundation & Establishment
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Sarangi School of Music was founded in Keraladithyapuram, 
+                marking the beginning of over two decades of dedicated arts 
+                education in Trivandrum.
+              </p>
+            </div>
+          </div>
+          
+          {/* Right side empty on desktop for left items */}
+          <div className="hidden md:block w-1/2"></div>
+        </div>
+
+        {/* 2007 - Curriculum Expansion (RIGHT SIDE on desktop) */}
+        <div className="relative flex">
+          {/* Left side empty on desktop for right items */}
+          <div className="hidden md:block w-1/2"></div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          <div className="hidden md:block w-1/2 pl-12">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2007</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Major Curriculum Expansion
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Expanded beyond vocal music to establish comprehensive departments 
+                for Instruments (Violin, Keyboard, Veena, Tabla, Mridangam), 
+                Dance (Bharatanatyam, Mohiniyattam, Kuchipudi, Folk Dance), 
+                and Fine Arts (Drawing & Sketching).
+              </p>
+            </div>
+          </div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2007</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Major Curriculum Expansion
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Expanded beyond vocal music to establish comprehensive departments 
+                for Instruments, Dance, and Fine Arts.
               </p>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ... (TIMELINE SECTION) ... */}
-      <section className="py-20 px-6 md:px-16 lg:px-24 bg-gradient-to-br from-maroon to-deep-maroon text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional mb-4">
-              25 Years of Offline Excellence
-            </h2>
-            <p className="text-xl text-saffron">
-              Our journey of traditional, in-person teaching
-            </p>
+        {/* 2012 - Government Affiliation (LEFT SIDE on desktop) */}
+        <div className="relative flex">
+          <div className="hidden md:block w-1/2 pr-12 text-right">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2012</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Government Recognition & Affiliation
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Achieved a major milestone with affiliation to the{" "}
+                <span className="font-bold text-saffron">Kerala Sangeetha Nataka Akademi</span>. 
+                This recognition validates our quality of training and enables 
+                certified courses with state-level opportunities.
+              </p>
+            </div>
           </div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2012</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Government Recognition & Affiliation
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Affiliated with Kerala Sangeetha Nataka Akademi, validating 
+                our quality of training and enabling certified courses.
+              </p>
+            </div>
+          </div>
+          
+          {/* Right side empty on desktop for left items */}
+          <div className="hidden md:block w-1/2"></div>
+        </div>
 
-          <div className="relative">
-            {/* Timeline Visual */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-saffron/50 h-full rounded-full"></div>
-
-            <div className="space-y-12">
-              {timeline.map((event, index) => (
-                <div key={index} className="relative flex items-start">
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-saffron rounded-full border-4 border-maroon z-10 mt-2 shadow-lg"></div>
-
-                  <div
-                    className={`ml-10 md:ml-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"} md:w-1/2 ${index % 2 === 0 ? "md:mr-1/2" : "md:ml-1/2"}`}
-                  >
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron md:border-l-0 md:border-r-4">
-                      <div className="text-saffron font-bold text-lg mb-2">
-                        {event.year}
-                      </div>
-                      <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                        {event.title}
-                      </h3>
-                      <p className="text-rose-100 leading-relaxed">
-                        {event.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        {/* 2015 - New Campus (RIGHT SIDE on desktop) */}
+        <div className="relative flex">
+          {/* Left side empty on desktop for right items */}
+          <div className="hidden md:block w-1/2"></div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          <div className="hidden md:block w-1/2 pl-12">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2015</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                New Acoustic Campus
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Relocated to a purpose-built facility in Powdikonam, 
+                specifically optimized for sound quality and learning. 
+                The new campus features 8 acoustic classrooms and dedicated 
+                practice halls for enhanced training experience.
+              </p>
+            </div>
+          </div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2015</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                New Acoustic Campus
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Relocated to a purpose-built facility in Powdikonam optimized 
+                for sound quality and learning.
+              </p>
             </div>
           </div>
         </div>
-      </section>
 
+        {/* 2020 - Hybrid Learning (LEFT SIDE on desktop) */}
+        <div className="relative flex">
+          <div className="hidden md:block w-1/2 pr-12 text-right">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2020</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Adoption of Hybrid Learning Model
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Successfully transitioned to offering Online Classes alongside 
+                traditional offline sessions. This innovation expanded our reach 
+                to students beyond Keraladithyapuram/Powdikonam while maintaining 
+                our commitment to quality mentorship.
+              </p>
+            </div>
+          </div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2020</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Adoption of Hybrid Learning Model
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Successfully transitioned to offering Online Classes alongside 
+                traditional offline sessions, expanding our reach.
+              </p>
+            </div>
+          </div>
+          
+          {/* Right side empty on desktop for left items */}
+          <div className="hidden md:block w-1/2"></div>
+        </div>
+
+        {/* 2024/2025 - Silver Jubilee (RIGHT SIDE on desktop) */}
+        <div className="relative flex">
+          {/* Left side empty on desktop for right items */}
+          <div className="hidden md:block w-1/2"></div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          <div className="hidden md:block w-1/2 pl-12">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2024 - 2025</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Silver Jubilee Celebration
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Marking 25 years of uninterrupted, traditional arts education 
+                and cultural preservation. A celebration of our legacy as 
+                Trivandrum's premier institution for authentic Indian classical 
+                arts training.
+              </p>
+            </div>
+          </div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2024 - 2025</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Silver Jubilee Celebration
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Marking 25 years of uninterrupted, traditional arts education 
+                and cultural preservation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       {/* ... (CTA VISIT SECTION - Retaining the call line for consistency) ... */}
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-light-saffron">
         <div className="max-w-4xl mx-auto text-center">
