@@ -530,7 +530,7 @@ export default function Home() {
 
      
       {/* ... (TIMELINE SECTION) ... */}
-{/* TIMELINE SECTION - UPDATED with brighter text */}
+{/* TIMELINE SECTION - UPDATED with correct years + Silver Jubilee */}
 <section className="py-20 px-6 md:px-16 lg:px-24 bg-gradient-to-br from-maroon to-deep-maroon text-white">
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-12">
@@ -550,19 +550,19 @@ export default function Home() {
       <div className="absolute left-4 w-1 bg-saffron/50 h-full rounded-full md:hidden"></div>
 
       <div className="space-y-12">
-        {/* 2000 - Establishment (LEFT SIDE on desktop) */}
+        {/* 2000 - Foundation with Music & Tabla (LEFT SIDE on desktop) */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
               <div className="text-saffron font-bold text-lg mb-2">2000</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Foundation & Establishment
+                Foundation with Music & Tabla
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
                 Sarangi School of Music was founded in Keraladithyapuram, 
-                marking the beginning of over two decades of dedicated arts 
-                education in Trivandrum. Our journey began with a focus on 
-                traditional Carnatic vocal training.
+                beginning our journey with a strong focus on Carnatic vocal music 
+                and traditional Tabla training. These foundational disciplines 
+                established our commitment to authentic Indian classical arts education.
               </p>
             </div>
           </div>
@@ -575,12 +575,11 @@ export default function Home() {
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
               <div className="text-saffron font-bold text-lg mb-2">2000</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Foundation & Establishment
+                Foundation with Music & Tabla
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Sarangi School of Music was founded in Keraladithyapuram, 
-                marking the beginning of over two decades of dedicated arts 
-                education in Trivandrum.
+                Founded with focus on Carnatic vocal music and traditional 
+                Tabla training, establishing our commitment to authentic arts education.
               </p>
             </div>
           </div>
@@ -589,7 +588,83 @@ export default function Home() {
           <div className="hidden md:block w-1/2"></div>
         </div>
 
-        {/* 2007 - Curriculum Expansion (RIGHT SIDE on desktop) */}
+        {/* 2003 - Dance & Violin Introduction (RIGHT SIDE on desktop) */}
+        <div className="relative flex">
+          {/* Left side empty on desktop for right items */}
+          <div className="hidden md:block w-1/2"></div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          <div className="hidden md:block w-1/2 pl-12">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2003</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Introduction of Dance & Violin
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Expanded our curriculum by introducing classical dance forms 
+                including Bharatanatyam, Mohiniyattam, and Kuchipudi, along 
+                with Carnatic Violin training. These additions marked our 
+                growth into a comprehensive performing arts institution.
+              </p>
+            </div>
+          </div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2003</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Introduction of Dance & Violin
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Introduced classical dance forms and Carnatic Violin training, 
+                growing into a comprehensive performing arts institution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 2005 - Drawing Department (LEFT SIDE on desktop) */}
+        <div className="relative flex">
+          <div className="hidden md:block w-1/2 pr-12 text-right">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2005</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Fine Arts: Drawing Department
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Established our Drawing and Sketching department, incorporating 
+                traditional Indian art forms alongside contemporary techniques. 
+                This addition completed our visual arts offerings, providing 
+                students with a holistic arts education experience.
+              </p>
+            </div>
+          </div>
+          
+          {/* Timeline Dot */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          
+          {/* Mobile/Tablet View */}
+          <div className="md:hidden ml-10 w-full">
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
+              <div className="text-saffron font-bold text-lg mb-2">2005</div>
+              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+                Fine Arts: Drawing Department
+              </h3>
+              <p className="text-white/90 leading-relaxed font-medium">
+                Established Drawing and Sketching department with traditional 
+                and contemporary techniques for holistic arts education.
+              </p>
+            </div>
+          </div>
+          
+          {/* Right side empty on desktop for left items */}
+          <div className="hidden md:block w-1/2"></div>
+        </div>
+
+        {/* 2007 - Keyboard & Veena Expansion (RIGHT SIDE on desktop) */}
         <div className="relative flex">
           {/* Left side empty on desktop for right items */}
           <div className="hidden md:block w-1/2"></div>
@@ -601,13 +676,12 @@ export default function Home() {
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
               <div className="text-saffron font-bold text-lg mb-2">2007</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Major Curriculum Expansion
+                Keyboard & Veena Expansion
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Expanded beyond vocal music to establish comprehensive departments 
-                for Instruments (Violin, Keyboard, Veena, Tabla, Mridangam), 
-                Dance (Bharatanatyam, Mohiniyattam, Kuchipudi, Folk Dance), 
-                and Fine Arts (Drawing & Sketching).
+                Added Keyboard/Piano training with both Indian classical adaptations 
+                and Western techniques, along with traditional Veena instruction. 
+                These instruments bridged classical traditions with modern expressions.
               </p>
             </div>
           </div>
@@ -617,29 +691,30 @@ export default function Home() {
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
               <div className="text-saffron font-bold text-lg mb-2">2007</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Major Curriculum Expansion
+                Keyboard & Veena Expansion
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Expanded beyond vocal music to establish comprehensive departments 
-                for Instruments, Dance, and Fine Arts.
+                Added Keyboard/Piano training and traditional Veena instruction, 
+                bridging classical traditions with modern expressions.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2012 - Government Affiliation (LEFT SIDE on desktop) */}
+        {/* 2015 - Government Affiliation (LEFT SIDE on desktop) */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2012</div>
+              <div className="text-saffron font-bold text-lg mb-2">2015</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Government Recognition & Affiliation
+                Government Affiliation Achievement
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Achieved a major milestone with affiliation to the{" "}
-                <span className="font-bold text-saffron">Kerala Sangeetha Nataka Akademi</span>. 
-                This recognition validates our quality of training and enables 
-                certified courses with state-level opportunities.
+                Achieved prestigious affiliation with the{" "}
+                <span className="font-bold text-saffron">Kerala Sangeetha Nataka Akademi</span>, 
+                recognizing our quality of training and institutional standards. 
+                This affiliation enables certified courses and state-level opportunities 
+                for our students, validating our 15 years of excellence.
               </p>
             </div>
           </div>
@@ -650,13 +725,13 @@ export default function Home() {
           {/* Mobile/Tablet View */}
           <div className="md:hidden ml-10 w-full">
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2012</div>
+              <div className="text-saffron font-bold text-lg mb-2">2015</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Government Recognition & Affiliation
+                Government Affiliation Achievement
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Affiliated with Kerala Sangeetha Nataka Akademi, validating 
-                our quality of training and enabling certified courses.
+                Affiliated with Kerala Sangeetha Nataka Akademi, enabling 
+                certified courses and validating our 15 years of excellence.
               </p>
             </div>
           </div>
@@ -665,7 +740,7 @@ export default function Home() {
           <div className="hidden md:block w-1/2"></div>
         </div>
 
-        {/* 2015 - New Campus (RIGHT SIDE on desktop) */}
+        {/* 2022 - Flute & Mridangam (RIGHT SIDE on desktop) */}
         <div className="relative flex">
           {/* Left side empty on desktop for right items */}
           <div className="hidden md:block w-1/2"></div>
@@ -675,15 +750,15 @@ export default function Home() {
           
           <div className="hidden md:block w-1/2 pl-12">
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2015</div>
+              <div className="text-saffron font-bold text-lg mb-2">2022</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                New Acoustic Campus
+                Latest Additions: Flute & Mridangam
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Relocated to a purpose-built facility in Powdikonam, 
-                specifically optimized for sound quality and learning. 
-                The new campus features 8 acoustic classrooms and dedicated 
-                practice halls for enhanced training experience.
+                Introduced Bansuri (Indian Flute) and advanced Mridangam training 
+                to our curriculum. These traditional instruments expanded our 
+                percussion and wind instrument offerings, keeping our curriculum 
+                vibrant and comprehensive for contemporary students.
               </p>
             </div>
           </div>
@@ -691,92 +766,59 @@ export default function Home() {
           {/* Mobile/Tablet View */}
           <div className="md:hidden ml-10 w-full">
             <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2015</div>
+              <div className="text-saffron font-bold text-lg mb-2">2022</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                New Acoustic Campus
+                Latest Additions: Flute & Mridangam
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Relocated to a purpose-built facility in Powdikonam optimized 
-                for sound quality and learning.
+                Introduced Bansuri (Indian Flute) and advanced Mridangam training, 
+                expanding our percussion and wind instrument offerings.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2020 - Hybrid Learning (LEFT SIDE on desktop) */}
+        {/* 2025 - Silver Jubilee Celebration (LEFT SIDE on desktop) */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2020</div>
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg relative overflow-hidden">
+              {/* Special sparkle effect for jubilee */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-saffron/20 rounded-full blur-xl"></div>
+              <div className="text-saffron font-bold text-lg mb-2">2025</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Adoption of Hybrid Learning Model
+                🎉 Silver Jubilee Celebration
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Successfully transitioned to offering Online Classes alongside 
-                traditional offline sessions. This innovation expanded our reach 
-                to students beyond Keraladithyapuram/Powdikonam while maintaining 
-                our commitment to quality mentorship.
+                Celebrating <span className="font-bold text-saffron">25 glorious years</span> of 
+                uninterrupted traditional arts education and cultural preservation. 
+                This landmark year honors our legacy as Trivandrum's premier institution 
+                for authentic Indian classical arts training, with special events, 
+                performances, and alumni reunions throughout the year.
               </p>
             </div>
           </div>
           
-          {/* Timeline Dot */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
+          {/* Special larger dot for jubilee */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl animate-pulse"></div>
           
           {/* Mobile/Tablet View */}
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2020</div>
+            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg relative overflow-hidden">
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-saffron/20 rounded-full blur-xl"></div>
+              <div className="text-saffron font-bold text-lg mb-2">2025</div>
               <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Adoption of Hybrid Learning Model
+                🎉 Silver Jubilee Celebration
               </h3>
               <p className="text-white/90 leading-relaxed font-medium">
-                Successfully transitioned to offering Online Classes alongside 
-                traditional offline sessions, expanding our reach.
+                Celebrating <span className="font-bold text-saffron">25 glorious years</span> of 
+                uninterrupted traditional arts education with special events 
+                and performances throughout the year.
               </p>
             </div>
           </div>
           
           {/* Right side empty on desktop for left items */}
           <div className="hidden md:block w-1/2"></div>
-        </div>
-
-        {/* 2024/2025 - Silver Jubilee (RIGHT SIDE on desktop) */}
-        <div className="relative flex">
-          {/* Left side empty on desktop for right items */}
-          <div className="hidden md:block w-1/2"></div>
-          
-          {/* Timeline Dot */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
-          <div className="hidden md:block w-1/2 pl-12">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2024 - 2025</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Silver Jubilee Celebration
-              </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Marking 25 years of uninterrupted, traditional arts education 
-                and cultural preservation. A celebration of our legacy as 
-                Trivandrum's premier institution for authentic Indian classical 
-                arts training.
-              </p>
-            </div>
-          </div>
-          
-          {/* Mobile/Tablet View */}
-          <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2024 - 2025</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                Silver Jubilee Celebration
-              </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Marking 25 years of uninterrupted, traditional arts education 
-                and cultural preservation.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
