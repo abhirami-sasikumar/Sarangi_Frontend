@@ -824,7 +824,7 @@ export default function Home() {
     </div>
   </div>
 </section>
-      {/* ... (CTA VISIT SECTION - Retaining the call line for consistency) ... */}
+      {/* ... (CTA VISIT SECTION - Retaining the call line for consistency) ... 
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-light-saffron">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl border border-saffron/50">
@@ -848,6 +848,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      */}
     </div>
   );
 }
