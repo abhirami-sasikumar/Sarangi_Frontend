@@ -176,8 +176,7 @@ const SectionTitleBlock = ({
 
 // New component for the animated symbols (UNCHANGED - Corrected and ready for page-wide use)
 const FloatingSymbols = () => (
-  <>
-    {/* Symbol 1: Top-Left, Saffron */}
+  <div className="absolute inset-0 z-0 pointer-events-none">    {/* Symbol 1: Top-Left, Saffron */}
     <div className="absolute top-[10%] left-[5%] text-4xl text-saffron opacity-90 animate-float-symbol animation-delay-0">
       🎶
     </div>
@@ -209,7 +208,7 @@ const FloatingSymbols = () => (
     <div className="absolute top-[15%] left-[35%] text-3xl text-maroon opacity-80 animate-float-symbol animation-delay-10s">
       ♫
     </div>
-  </>
+  </div>
 );
 
 
@@ -295,7 +294,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Badge
+        {/* <Badge
           top="-4"
           right="-4"
           bgColor="bg-maroon"
@@ -310,7 +309,7 @@ export default function Home() {
           icon="👥"
           count="500+"
           text="Students"
-        />
+        /> */}
       </div>
 
       {/* Content Column */}
@@ -339,9 +338,9 @@ export default function Home() {
 
         <Link
           to="/contact"
-          className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-saffron to-amber-700 text-white rounded-lg font-bold shadow-lg hover:-translate-y-1 transition-all border-2 border-maroon"
+          className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-saffron to-amber-700 text-maroon rounded-lg font-bold shadow-lg hover:-translate-y-1 transition-all border-2 border-maroon"
         >
-          Begin Your Musical Journey →
+          "Begin Your Musical Journey" 
         </Link>
       </div>
     </div>
@@ -358,7 +357,7 @@ export default function Home() {
         Sacred Annual Tradition
       </p>
       <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional text-saffron">
-        Arpanam — Musical Offerings
+        Arpanam - Musical Offerings
       </h2>
       <p className="text-white max-w-2xl mx-auto mt-3">
         Ceremonial performances rooted in devotion, tradition, and legacy.
@@ -530,300 +529,249 @@ export default function Home() {
 
      
       {/* ... (TIMELINE SECTION) ... */}
-{/* TIMELINE SECTION - UPDATED with correct years + Silver Jubilee */}
-<section className="py-20 px-6 md:px-16 lg:px-24 bg-gradient-to-br from-maroon to-deep-maroon text-white">
+      <section className="py-20 px-6 md:px-16 lg:px-24 bg-maroon/90 text-white relative">
+      <FloatingSymbols />
   <div className="max-w-6xl mx-auto">
     <div className="text-center mb-12">
       <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional mb-4 text-white">
         Our Journey of Excellence
       </h2>
       <p className="text-xl text-saffron font-medium">
-        Milestones at Sarangi School of Music (Keraladithyapuram, Trivandrum)
+        Milestones at Sarangi School of Music
       </p>
     </div>
 
     <div className="relative">
       {/* Timeline Vertical Line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-saffron/50 h-full rounded-full hidden md:block"></div>
-      
-      {/* Timeline for mobile - show on left side */}
-      <div className="absolute left-4 w-1 bg-saffron/50 h-full rounded-full md:hidden"></div>
+      <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-[3px] bg-saffron rounded-full hidden md:block"></div>
+
+      {/* Mobile Timeline Line */}
+      <div className="absolute inset-y-0 left-4 w-[3px] bg-saffron rounded-full md:hidden"></div>
 
       <div className="space-y-12">
-        {/* 2000 - Foundation with Music & Tabla (LEFT SIDE on desktop) */}
+        {/* 2000 */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2000</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] backdrop-blur-[50px] text-maroon rounded-xl p-6 border-r-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2000</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Foundation with Music & Tabla
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Sarangi School of Music was founded in Keraladithyapuram, 
-                beginning our journey with a strong focus on Carnatic vocal music 
-                and traditional Tabla training. These foundational disciplines 
-                established our commitment to authentic Indian classical arts education.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Sarangi School of Music was founded in Keraladithyapuram, beginning our journey with a strong focus on Carnatic vocal music and traditional Tabla training.
               </p>
             </div>
           </div>
-          
-          {/* Timeline Dot */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2000</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2000</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Foundation with Music & Tabla
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Founded with focus on Carnatic vocal music and traditional 
-                Tabla training, establishing our commitment to authentic arts education.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Founded with focus on Carnatic vocal music and traditional Tabla training.
               </p>
             </div>
           </div>
-          
-          {/* Right side empty on desktop for left items */}
+
           <div className="hidden md:block w-1/2"></div>
         </div>
 
-        {/* 2003 - Dance & Violin Introduction (RIGHT SIDE on desktop) */}
+        {/* 2003 */}
         <div className="relative flex">
-          {/* Left side empty on desktop for right items */}
           <div className="hidden md:block w-1/2"></div>
-          
-          {/* Timeline Dot */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
+
           <div className="hidden md:block w-1/2 pl-12">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2003</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2003</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Introduction of Dance & Violin
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Expanded our curriculum by introducing classical dance forms 
-                including Bharatanatyam, Mohiniyattam, and Kuchipudi, along 
-                with Carnatic Violin training. These additions marked our 
-                growth into a comprehensive performing arts institution.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Expanded our curriculum by introducing classical dance forms and Carnatic Violin training.
               </p>
             </div>
           </div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2003</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2003</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Introduction of Dance & Violin
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Introduced classical dance forms and Carnatic Violin training, 
-                growing into a comprehensive performing arts institution.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Introduced classical dance forms and Carnatic Violin training.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2005 - Drawing Department (LEFT SIDE on desktop) */}
+        {/* 2005 */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2005</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-r-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2005</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Fine Arts: Drawing Department
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Established our Drawing and Sketching department, incorporating 
-                traditional Indian art forms alongside contemporary techniques. 
-                This addition completed our visual arts offerings, providing 
-                students with a holistic arts education experience.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Established Drawing and Sketching department with traditional and contemporary techniques.
               </p>
             </div>
           </div>
-          
-          {/* Timeline Dot */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2005</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2005</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Fine Arts: Drawing Department
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Established Drawing and Sketching department with traditional 
-                and contemporary techniques for holistic arts education.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Traditional and contemporary drawing education for holistic arts learning.
               </p>
             </div>
           </div>
-          
-          {/* Right side empty on desktop for left items */}
+
           <div className="hidden md:block w-1/2"></div>
         </div>
 
-        {/* 2007 - Keyboard & Veena Expansion (RIGHT SIDE on desktop) */}
+        {/* 2007 */}
         <div className="relative flex">
-          {/* Left side empty on desktop for right items */}
           <div className="hidden md:block w-1/2"></div>
-          
-          {/* Timeline Dot */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
+
           <div className="hidden md:block w-1/2 pl-12">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2007</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2007</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Keyboard & Veena Expansion
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Added Keyboard/Piano training with both Indian classical adaptations 
-                and Western techniques, along with traditional Veena instruction. 
-                These instruments bridged classical traditions with modern expressions.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Added Keyboard/Piano and Veena training bridging tradition with modern expression.
               </p>
             </div>
           </div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2007</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2007</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Keyboard & Veena Expansion
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Added Keyboard/Piano training and traditional Veena instruction, 
-                bridging classical traditions with modern expressions.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Keyboard and Veena training added to curriculum.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2015 - Government Affiliation (LEFT SIDE on desktop) */}
+        {/* 2015 */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2015</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-r-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2015</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Government Affiliation Achievement
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Achieved prestigious affiliation with the{" "}
-                <span className="font-bold text-saffron">Kerala Sangeetha Nataka Akademi</span>, 
-                recognizing our quality of training and institutional standards. 
-                This affiliation enables certified courses and state-level opportunities 
-                for our students, validating our 15 years of excellence.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Affiliated with <span className="font-bold text-saffron">Kerala Sangeetha Nataka Akademi</span>, enabling certified courses and state-level recognition.
               </p>
             </div>
           </div>
-          
-          {/* Timeline Dot */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2015</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2015</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Government Affiliation Achievement
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Affiliated with Kerala Sangeetha Nataka Akademi, enabling 
-                certified courses and validating our 15 years of excellence.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Kerala Sangeetha Nataka Akademi affiliation achieved.
               </p>
             </div>
           </div>
-          
-          {/* Right side empty on desktop for left items */}
+
           <div className="hidden md:block w-1/2"></div>
         </div>
 
-        {/* 2022 - Flute & Mridangam (RIGHT SIDE on desktop) */}
+        {/* 2022 */}
         <div className="relative flex">
-          {/* Left side empty on desktop for right items */}
           <div className="hidden md:block w-1/2"></div>
-          
-          {/* Timeline Dot */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl"></div>
-          
+
           <div className="hidden md:block w-1/2 pl-12">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2022</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2022</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Latest Additions: Flute & Mridangam
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Introduced Bansuri (Indian Flute) and advanced Mridangam training 
-                to our curriculum. These traditional instruments expanded our 
-                percussion and wind instrument offerings, keeping our curriculum 
-                vibrant and comprehensive for contemporary students.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Introduced Bansuri and advanced Mridangam training.
               </p>
             </div>
           </div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg">
-              <div className="text-saffron font-bold text-lg mb-2">2022</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up">
+              <div className="text-maroon font-bold text-lg mb-2">2022</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
                 Latest Additions: Flute & Mridangam
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Introduced Bansuri (Indian Flute) and advanced Mridangam training, 
-                expanding our percussion and wind instrument offerings.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Expanded wind and percussion offerings.
               </p>
             </div>
           </div>
         </div>
 
-        {/* 2025 - Silver Jubilee Celebration (LEFT SIDE on desktop) */}
+        {/* 2025 */}
         <div className="relative flex">
           <div className="hidden md:block w-1/2 pr-12 text-right">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-r-4 border-saffron shadow-lg relative overflow-hidden">
-              {/* Special sparkle effect for jubilee */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-saffron/20 rounded-full blur-xl"></div>
-              <div className="text-saffron font-bold text-lg mb-2">2025</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                🎉 Silver Jubilee Celebration
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-r-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up relative overflow-hidden">
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-saffron/30 rounded-full blur-xl"></div>
+              <div className="text-maroon font-bold text-lg mb-2">2025</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
+                 Silver Jubilee Celebration
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Celebrating <span className="font-bold text-saffron">25 glorious years</span> of 
-                uninterrupted traditional arts education and cultural preservation. 
-                This landmark year honors our legacy as Trivandrum's premier institution 
-                for authentic Indian classical arts training, with special events, 
-                performances, and alumni reunions throughout the year.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                Celebrating <span className="font-bold text-saffron">25 glorious years</span> of uninterrupted traditional arts education.
               </p>
             </div>
           </div>
-          
-          {/* Special larger dot for jubilee */}
+
           <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-saffron rounded-full border-4 border-white z-10 mt-2 shadow-xl animate-pulse"></div>
-          
-          {/* Mobile/Tablet View */}
+
           <div className="md:hidden ml-10 w-full">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-6 border-l-4 border-saffron shadow-lg relative overflow-hidden">
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-saffron/20 rounded-full blur-xl"></div>
-              <div className="text-saffron font-bold text-lg mb-2">2025</div>
-              <h3 className="text-2xl font-bold text-white font-serif-traditional mb-2">
-                🎉 Silver Jubilee Celebration
+            <div className="bg-[#F8F1E7] text-maroon rounded-xl p-6 border-l-4 border-saffron shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-saffron/40 animate-fade-up relative overflow-hidden">
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-saffron/30 rounded-full blur-xl"></div>
+              <div className="text-maroon font-bold text-lg mb-2">2025</div>
+              <h3 className="text-2xl text-black font-bold font-serif-traditional mb-2">
+                 Silver Jubilee Celebration
               </h3>
-              <p className="text-white/90 leading-relaxed font-medium">
-                Celebrating <span className="font-bold text-saffron">25 glorious years</span> of 
-                uninterrupted traditional arts education with special events 
-                and performances throughout the year.
+              <p className="text-maroon/80 leading-relaxed font-medium">
+                25 years of excellence in Indian classical arts education.
               </p>
             </div>
           </div>
-          
-          {/* Right side empty on desktop for left items */}
+
           <div className="hidden md:block w-1/2"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
       {/* ... (CTA VISIT SECTION - Retaining the call line for consistency) ... 
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-light-saffron">
         <div className="max-w-4xl mx-auto text-center">

@@ -9,7 +9,7 @@ const NavItem = ({ to, children, mobile = false }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `relative px-4 py-2 text-sm font-medium transition-all duration-300 
+      `relative px-4 py-2 text-md font-bold transition-all duration-300 
       ${isActive 
         ? "text-maroon font-semibold bg-light-saffron rounded-lg shadow-inner" 
         : "text-gray-700 hover:text-maroon hover:bg-amber-50"
@@ -113,13 +113,13 @@ export default function Navbar() {
           <NavItem to="/about">About</NavItem>
           <NavItem to="/courses">Courses</NavItem>
           <NavItem to="/teachers">Teachers</NavItem>
-          <NavItem to="/gallery">Gallery</NavItem>
+          {/* <NavItem to="/gallery">Gallery</NavItem> */}
           <NavItem to="/contact">Contact</NavItem>
 
           <Link
             to="/visit"
-            className="ml-4 px-4 py-2.5 rounded-xl text-sm font-semibold 
-                       bg-gradient-to-r from-saffron to-amber-700 text-white 
+            className="ml-4 px-4 py-2.5 rounded-xl text-sm font-bold 
+                       bg-gradient-to-r from-saffron to-amber-700 text-maroon 
                        hover:from-amber-700 hover:to-saffron transition-all duration-300 
                        shadow-md hover:shadow-lg transform hover:-translate-y-0.5
                        border border-saffron/50"

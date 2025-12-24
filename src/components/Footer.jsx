@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-700 text-sm leading-relaxed mb-6 max-w-md">
-              For over two decades, **Sarangi School** has been nurturing artistic talent through 
+              For over two decades, Sarangi School has been nurturing artistic talent through 
               traditional in-person teaching methods. Join us in preserving and promoting 
               Kerala's rich cultural heritage.
             </p>

@@ -20,10 +20,6 @@ body {
   color: var(--text-dark);
 }
 
-/* Custom Tailwind Colors (Use these in Tailwind classes like text-maroon) 
-   Note: Tailwind classes for these should be added to your tailwind.config.js 
-   but since this is a global CSS file, we define them here for direct use if needed. 
-*/
 .text-maroon { color: var(--maroon); }
 .bg-maroon { background-color: var(--maroon); }
 .text-saffron { color: var(--saffron); }
@@ -126,11 +122,7 @@ body {
 /* Custom Tailwind utility class to apply the animation */
 .animate-float-symbol {
   /* Increased duration to 35s to make the drift feel slower and cover more area */
-  animation: floatSymbol 35s linear infinite; 
-  /* 🌟 IMPORTANT: This needs to be position: fixed to float across the whole page, 
-     but since it's inside a 'relative' parent, 'absolute' will work on the page. 
-     The symbols are already 'absolute' in Home.js, which is correct for this setup. 
-     We are now relying on the main container being the reference. */
+
 }
 
 
