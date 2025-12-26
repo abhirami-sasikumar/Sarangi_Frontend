@@ -8,23 +8,29 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-sand to-light-saffron border-t border-maroon/20 relative overflow-hidden">
 
-      {/* Floating Musical Notes */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-saffron opacity-20"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              fontSize: `${14 + Math.random() * 20}px`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          >
-            {["♫", "♪", "♩", "♬"][Math.floor(Math.random() * 4)]}
-          </div>
-        ))}
-      </div>
+    {/* Floating Musical Notes (ONLY 4, NO REPEAT) */}
+<div className="absolute inset-0 pointer-events-none overflow-hidden">
+  {[
+    { symbol: "♫", top: "15%", left: "10%", size: "20px", delay: "0s" },
+    { symbol: "♪", top: "30%", left: "80%", size: "18px", delay: "1s" },
+    { symbol: "♩", top: "65%", left: "20%", size: "22px", delay: "2s" },
+    { symbol: "♬", top: "75%", left: "70%", size: "19px", delay: "3s" },
+  ].map((item, i) => (
+    <div
+      key={i}
+      className="absolute text-saffron opacity-20"
+      style={{
+        top: item.top,
+        left: item.left,
+        fontSize: item.size,
+        animationDelay: item.delay,
+      }}
+    >
+      {item.symbol}
+    </div>
+  ))}
+</div>
+
 
       <div className="container mx-auto px-4 py-12 relative z-10">
 

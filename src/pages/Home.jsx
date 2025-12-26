@@ -4,7 +4,7 @@ import "../App.css";
 import MookambikaImg from "../assets/Mookambika.jpg"
 import PancharatnaImg from "../assets/Pancharatna.jpg";
 import LogoImg from "../assets/Logo.png";
-import DanceImg from "../assets/Dance.jpg";
+import DanceImg from "../assets/Dance.webp";
 
 
 // --- Data Definitions (UNCHANGED) ---
@@ -179,42 +179,7 @@ const SectionTitleBlock = ({
   </div>
 );
 
-// New component for the animated symbols (UNCHANGED - Corrected and ready for page-wide use)
-const FloatingSymbols = () => (
-  <div className="absolute inset-0 z-0 pointer-events-none">    {/* Symbol 1: Top-Left, Saffron */}
-    <div className="absolute top-[10%] left-[5%] text-4xl text-saffron opacity-90 animate-float-symbol animation-delay-0">
-      🎶
-    </div>
-    {/* Symbol 2: Mid-Right, Maroon (Contrasting) */}
-    <div className="absolute top-[60%] right-[10%] text-5xl text-maroon opacity-90 animate-float-symbol animation-delay-3s">
-      ♫
-    </div>
-    {/* Symbol 3: Mid-Left, Saffron */}
-    <div className="absolute top-[40%] left-[20%] text-3xl text-saffron opacity-90 animate-float-symbol animation-delay-6s">
-      ♬
-    </div>
-    {/* Symbol 4: Bottom-Left, Maroon (was Violin) */}
-    <div className="absolute top-[85%] left-[15%] text-5xl text-maroon opacity-90 animate-float-symbol animation-delay-9s">
-      ♪
-    </div>
-    {/* Symbol 5: Mid-Center, Saffron (Smaller, faster start) (was Drum) */}
-    <div className="absolute top-[30%] left-[50%] text-2xl text-saffron opacity-90 animate-float-symbol animation-delay-1s">
-      ♯
-    </div>
-    {/* Symbol 6: Far-Right, Maroon (Small) (was Keyboard) */}
-    <div className="absolute top-[25%] right-[5%] text-3xl text-maroon opacity-90 animate-float-symbol animation-delay-4s">
-      ♭
-    </div>
-    {/* Symbol 7: Bottom-Right, Saffron (Largest) (was Mic) */}
-    <div className="absolute top-[70%] right-[30%] text-6xl text-saffron opacity-90 animate-float-symbol animation-delay-7s">
-      ♬
-    </div>
-    {/* Symbol 8: Upper-Center, Maroon (Low opacity for depth) (was Lute) */}
-    <div className="absolute top-[15%] left-[35%] text-3xl text-maroon opacity-80 animate-float-symbol animation-delay-10s">
-      ♫
-    </div>
-  </div>
-);
+
 
 
 // --- Home Component (MODIFIED) ---
@@ -244,8 +209,7 @@ export default function Home() {
         }}
       ></div>
 
-      {/* 🌟 Floating Animated Symbols placed HERE 🌟 (UNCHANGED) */}
-      <FloatingSymbols />
+
 
 
       {/* HERO SECTION (MODIFIED: pt-16 reduced to pt-4) */}
@@ -289,15 +253,14 @@ export default function Home() {
                 <div className="lg:col-span-5 relative group">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand">
 
-                    {/* Image */}
                     <img
-                      src={DanceImg}
-                      alt="Classical Dance Training at Sarangi School of Music"
-                      className="w-full h-[420px] object-cover
-                 transform transition-transform duration-700 ease-out
-                 group-hover:scale-110"
+                      src="/Dance.webp"
+                      alt="Classical Dance Training"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-[420px] object-cover"
                     />
-
+                    
                     {/* Soft Overlay */}
                     <div
                       className="absolute inset-0 bg-gradient-to-t
@@ -580,7 +543,6 @@ export default function Home() {
 
       {/* ... (TIMELINE SECTION) ... */}
       <section className="py-20 px-6 md:px-16 lg:px-24 bg-maroon/90 text-white relative">
-        <FloatingSymbols />
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional mb-4 text-white">
