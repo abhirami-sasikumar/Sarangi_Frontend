@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import MookambikaImg from "../assets/Mookambika.jpg"
+import PancharatnaImg from "../assets/Pancharatna.jpg";
+
 
 // --- Data Definitions (UNCHANGED) ---
 const courses = [
@@ -349,83 +352,108 @@ export default function Home() {
 
 
    {/* 2. NEW SECTION: ANNUAL ARPANA (MUSICAL OFFERINGS) - REVISED FOR MAROON BG & HIGH CONTRAST */}
-    <section className="py-20 px-6 md:px-16 lg:px-24 bg-maroon relative">
+{/* 2. NEW SECTION: ANNUAL ARPANAM (MUSICAL OFFERINGS) */}
+<section className="py-20 px-6 md:px-16 lg:px-24 bg-maroon relative">
   <div className="max-w-7xl mx-auto">
 
+    {/* Section Header */}
     <div className="text-center mb-12">
       <p className="text-sm font-medium text-saffron uppercase tracking-widest">
         Sacred Annual Tradition
       </p>
       <h2 className="text-4xl lg:text-5xl font-bold font-serif-traditional text-saffron">
-        Arpanam - Musical Offerings
+        Arpanam – Musical Offerings
       </h2>
       <p className="text-white max-w-2xl mx-auto mt-3">
         Ceremonial performances rooted in devotion, tradition, and legacy.
       </p>
     </div>
 
-    <div className="grid lg:grid-cols-3 gap-10">
+    {/* Cards Grid */}
+    <div className="grid lg:grid-cols-3 gap-10 items-stretch">
 
-      {/* FEATURED EVENT */}
-      <div className="lg:col-span-2 bg-sand p-10 rounded-3xl shadow-2xl border-t-8 border-saffron">
-        <div className="flex items-center space-x-4 mb-5">
-          <div className="text-6xl text-saffron font-serif-traditional">ॐ</div>
-          <div>
-            <h3 className="text-3xl font-extrabold text-maroon font-serif-traditional">
-              Tyagaraja Aradhana
-            </h3>
-            <p className="text-sm uppercase text-gray-500">
-              Pancharatna Keerthanam
-            </p>
-          </div>
+      {/* FEATURED EVENT — PANCHARATNA */}
+      <div className="lg:col-span-2 bg-sand p-10 rounded-3xl shadow-2xl border-t-8 border-saffron h-full flex flex-col">
+
+        {/* Image */}
+        <div className="mb-6 overflow-hidden rounded-3xl border-2 border-saffron shadow-xl">
+          <img
+            src={PancharatnaImg}
+            alt="Tyagaraja Aradhana Pancharatna Keerthanam"
+            className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+          />
         </div>
 
+        {/* Title */}
+        <div className="mb-5">
+          <h3 className="text-3xl font-extrabold text-maroon font-serif-traditional">
+            Tyagaraja Aradhana
+          </h3>
+          <p className="text-sm uppercase text-gray-500">
+            Pancharatna Keerthanam
+          </p>
+        </div>
+
+        {/* Content */}
         <p className="text-gray-700 leading-relaxed mb-3">
           A sacred annual homage to Saint Tyagaraja, uniting musicians in a
           collective rendering of the Pancharatna Kritis.
         </p>
 
-        <p className="italic font-semibold text-gray-800">
+        <p className="italic font-semibold text-gray-800 mb-6">
           A cornerstone of Sarangi’s spiritual and musical lineage.
         </p>
 
-        <div className="mt-6 flex justify-between text-sm border-t border-saffron/40 pt-3">
+        {/* Footer */}
+        <div className="mt-auto flex justify-between text-sm border-t border-saffron/40 pt-3">
           <span className="font-bold text-maroon">17+ Years</span>
           <span className="text-gray-500">📍 Keraladithyapuram</span>
         </div>
       </div>
 
-      {/* SECONDARY EVENT */}
-      <div className="bg-sand p-8 rounded-3xl shadow-xl border-t-8 border-saffron">
-        <div className="flex items-center space-x-3 mb-4">
-          <div className="text-5xl text-saffron">𛰪</div>
-          <div>
-            <h3 className="text-2xl font-extrabold text-maroon font-serif-traditional">
-              Mookambika Sangeetarchana
-            </h3>
-            <p className="text-xs uppercase text-gray-500">
-              Annual Devotional Pilgrimage
-            </p>
-          </div>
+      {/* SECONDARY EVENT — MOOKAMBIKA */}
+      <div className="bg-sand p-10 rounded-3xl shadow-xl border-t-8 border-saffron h-full flex flex-col">
+
+        {/* Image */}
+        <div className="mb-6 overflow-hidden rounded-3xl border-2 border-saffron shadow-lg">
+          <img
+            src={MookambikaImg}
+            alt="Mookambika Temple"
+            className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+          />
         </div>
 
+        {/* Title */}
+        <div className="mb-5">
+          <h3 className="text-2xl font-extrabold text-maroon font-serif-traditional">
+            Mookambika Sangeetarchana
+          </h3>
+          <p className="text-xs uppercase text-gray-500">
+            Annual Devotional Pilgrimage
+          </p>
+        </div>
+
+        {/* Content */}
         <p className="text-gray-700 text-sm leading-relaxed mb-3">
           A 15-hour continuous musical offering at Kollur Mookambika Temple,
           invoking blessings of Saraswati.
         </p>
 
-        <p className="italic font-semibold text-gray-800 text-sm">
+        <p className="italic font-semibold text-gray-800 text-sm mb-6">
           Performed every May 20th.
         </p>
 
-        <div className="mt-5 flex justify-between text-sm border-t border-saffron/40 pt-3">
+        {/* Footer */}
+        <div className="mt-auto flex justify-between text-sm border-t border-saffron/40 pt-3">
           <span className="font-bold text-maroon">12+ Years</span>
           <span className="text-gray-500">📅 May 20</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
 
 
 
