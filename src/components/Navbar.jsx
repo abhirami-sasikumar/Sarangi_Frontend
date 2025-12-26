@@ -109,12 +109,12 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-2">
-          <NavItem to="/">Home</NavItem>
+          {/* <NavItem to="/">Home</NavItem>
           <NavItem to="/about">About</NavItem>
           <NavItem to="/courses">Courses</NavItem>
-          <NavItem to="/teachers">Teachers</NavItem>
+          <NavItem to="/teachers">Teachers</NavItem> */}
           {/* <NavItem to="/gallery">Gallery</NavItem> */}
-          <NavItem to="/contact">Contact</NavItem>
+          {/* <NavItem to="/contact">Contact</NavItem> */}
 
           <Link
             to="/visit"
@@ -161,12 +161,12 @@ export default function Navbar() {
         }`}
       >
         <div className="py-4 px-4 flex flex-col gap-1 border-t border-saffron/30">
-          <NavItem to="/" mobile>Home</NavItem>
+          {/* <NavItem to="/" mobile>Home</NavItem>
           <NavItem to="/about" mobile>About</NavItem>
           <NavItem to="/courses" mobile>Courses</NavItem>
           <NavItem to="/teachers" mobile>Teachers</NavItem>
           <NavItem to="/gallery" mobile>Gallery</NavItem>
-          <NavItem to="/contact" mobile>Contact</NavItem>
+          <NavItem to="/contact" mobile>Contact</NavItem> */}
 
           <div className="mt-4 pt-4 border-t border-saffron/30">
             <Link

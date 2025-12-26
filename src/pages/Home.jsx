@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import MookambikaImg from "../assets/Mookambika.jpg"
 import PancharatnaImg from "../assets/Pancharatna.jpg";
+import LogoImg from "../assets/Logo.png";
+import DanceImg from "../assets/Dance.jpg";
 
 
 // --- Data Definitions (UNCHANGED) ---
@@ -282,18 +284,19 @@ export default function Home() {
       {/* Image Column */}
       <div className="lg:col-span-5 relative">
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand">
+         
           <div className="w-full h-[420px] bg-gradient-to-br from-maroon/80 to-saffron/60 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <div className="text-center text-white p-8 rounded-2xl bg-maroon/70 border-4 border-saffron shadow-xl">
-                <div className="text-7xl mb-3">🎻</div>
-                <div className="text-2xl font-black font-serif-traditional">
-                  Artistic Mastery
-                </div>
-                <div className="text-sm mt-1">
-                  Offline Mentorship • Online Flexibility
-                </div>
-              </div>
-            </div>
+<div className="lg:col-span-5 relative">
+  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand">
+    <img
+      src={DanceImg}
+      alt="Classical Dance Training at Sarangi School of Music"
+      className="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+    />
+  </div>
+</div>
+
+
           </div>
         </div>
 
