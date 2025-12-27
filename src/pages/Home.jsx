@@ -191,27 +191,27 @@ const SectionTitleBlock = ({
 export default function Home() {
 
   const images = [
-  "/Dance.webp",
-  "/01.webp",
-  "/02.webp",
-  "/03.webp",
-];
+    "/Dance.webp",
+    "/01.webp",
+    "/02.webp",
+    "/03.webp",
+  ];
 
-const [currentIndex, setCurrentIndex] = useState(0);
-const [isFlipping, setIsFlipping] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFlipping, setIsFlipping] = useState(false);
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setIsFlipping(true);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFlipping(true);
 
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-      setIsFlipping(false);
-    }, 700); // flip duration
-  }, 3500);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+        setIsFlipping(false);
+      }, 700); // flip duration
+    }, 3500);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const groupedCourses = courses.reduce((acc, course) => {
     if (!acc[course.category]) {
@@ -281,27 +281,27 @@ useEffect(() => {
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand">
 
                     <div className="relative w-full h-[420px] perspective-1000">
-  <div
-    className={`absolute inset-0 rounded-3xl overflow-hidden
+                      <div
+                        className={`absolute inset-0 rounded-3xl overflow-hidden
       transition-transform duration-700 ease-in-out
       ${isFlipping ? "rotate-y-180" : "rotate-y-0"}`}
-    style={{ transformStyle: "preserve-3d" }}
-  >
-    {/* FRONT PAGE */}
-    <img
-      src={images[currentIndex]}
-      alt="Classical Arts Training"
-      className="absolute inset-0 w-full h-full object-cover backface-hidden"
-    />
+                        style={{ transformStyle: "preserve-3d" }}
+                      >
+                        {/* FRONT PAGE */}
+                        <img
+                          src={images[currentIndex]}
+                          alt="Classical Arts Training"
+                          className="absolute inset-0 w-full h-full object-cover backface-hidden"
+                        />
 
-    {/* BACK PAGE */}
-    <img
-      src={images[(currentIndex + 1) % images.length]}
-      alt="Next Training"
-      className="absolute inset-0 w-full h-full object-cover rotate-y-180 backface-hidden"
-    />
-  </div>
-</div>
+                        {/* BACK PAGE */}
+                        <img
+                          src={images[(currentIndex + 1) % images.length]}
+                          alt="Next Training"
+                          className="absolute inset-0 w-full h-full object-cover rotate-y-180 backface-hidden"
+                        />
+                      </div>
+                    </div>
 
 
                     {/* Soft Overlay */}
@@ -343,7 +343,7 @@ useEffect(() => {
               </div>
 
               <Link
-                to="/contact"
+                to="/"
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-saffron to-amber-700 text-maroon rounded-lg font-bold shadow-lg hover:-translate-y-1 transition-all border-2 border-maroon"
               >
                 "Begin Your Musical Journey"

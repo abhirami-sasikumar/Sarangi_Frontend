@@ -8,28 +8,28 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-sand to-light-saffron border-t border-maroon/20 relative overflow-hidden">
 
-    {/* Floating Musical Notes (ONLY 4, NO REPEAT) */}
-<div className="absolute inset-0 pointer-events-none overflow-hidden">
-  {[
-    { symbol: "♫", top: "15%", left: "10%", size: "20px", delay: "0s" },
-    { symbol: "♪", top: "30%", left: "80%", size: "18px", delay: "1s" },
-    { symbol: "♩", top: "65%", left: "20%", size: "22px", delay: "2s" },
-    { symbol: "♬", top: "75%", left: "70%", size: "19px", delay: "3s" },
-  ].map((item, i) => (
-    <div
-      key={i}
-      className="absolute text-saffron opacity-20"
-      style={{
-        top: item.top,
-        left: item.left,
-        fontSize: item.size,
-        animationDelay: item.delay,
-      }}
-    >
-      {item.symbol}
-    </div>
-  ))}
-</div>
+      {/* Floating Musical Notes (ONLY 4, NO REPEAT) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[
+          { symbol: "♫", top: "15%", left: "10%", size: "20px", delay: "0s" },
+          { symbol: "♪", top: "30%", left: "80%", size: "18px", delay: "1s" },
+          { symbol: "♩", top: "65%", left: "20%", size: "22px", delay: "2s" },
+          { symbol: "♬", top: "75%", left: "70%", size: "19px", delay: "3s" },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="absolute text-saffron opacity-20"
+            style={{
+              top: item.top,
+              left: item.left,
+              fontSize: item.size,
+              animationDelay: item.delay,
+            }}
+          >
+            {item.symbol}
+          </div>
+        ))}
+      </div>
 
 
       <div className="container mx-auto px-4 py-12 relative z-10">
@@ -39,11 +39,15 @@ export default function Footer() {
 
           {/* Logo + Title */}
           <div className="flex flex-col items-center gap-3">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-saffron to-maroon 
-                            shadow-md flex items-center justify-center text-white font-bold text-2xl 
-                            border-2 border-white">
-              🎵
-            </div>
+          <div className="w-16 h-16 rounded-full bg-white shadow-md 
+                flex items-center justify-center border border-maroon/20">
+  <img
+    src="/CircleLogo.png"
+    alt="Sarangi School of Music Logo"
+    className="w-12 h-12 object-contain"
+  />
+</div>
+
 
             <div>
               <h3 className="font-serif-traditional text-2xl font-bold text-maroon">

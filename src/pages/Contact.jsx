@@ -56,55 +56,7 @@ export default function Contact() {
                 </div>
             </div>
 
-            {/* Contact Form (Right Column) */}
-            <div className="p-8 bg-white rounded-2xl shadow-xl">
-                <h3 className="font-serif-traditional text-3xl text-maroon mb-6">Send Us a Message</h3>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <input
-                        className="w-full border border-saffron/50 p-3 rounded-lg shadow-sm bg-sand 
-                        focus:border-maroon focus:ring-2 focus:ring-maroon/50 outline-none transition duration-300"
-                        placeholder="Your Name"
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        required
-                    />
-
-                    <input
-                        className="w-full border border-saffron/50 p-3 rounded-lg shadow-sm bg-sand 
-                        focus:border-maroon focus:ring-2 focus:ring-maroon/50 outline-none transition duration-300"
-                        placeholder="Email"
-                        type="email"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        required
-                    />
-
-                    <textarea
-                        className="w-full border border-saffron/50 p-3 rounded-lg shadow-sm bg-sand 
-                        focus:border-maroon focus:ring-2 focus:ring-maroon/50 outline-none transition duration-300"
-                        placeholder="Message or Course Inquiry"
-                        rows={5}
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        required
-                    />
-
-                    <button 
-                        type="submit" 
-                        className="px-6 py-3 bg-maroon text-white rounded-lg font-semibold shadow-md 
-                        hover:bg-deep-maroon transition duration-300 w-full"
-                    >
-                        Send Message
-                    </button>
-                </form>
-
-                {status && (
-                    <div className={`mt-4 text-center p-3 rounded-lg ${status.startsWith('✅') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                        {status}
-                    </div>
-                )}
-            </div>
+        
         </div>
     </div>
   )
