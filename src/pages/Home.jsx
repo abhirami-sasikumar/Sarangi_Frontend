@@ -5,6 +5,10 @@ import MookambikaImg from "../assets/Mookambika.jpg"
 import PancharatnaImg from "../assets/Pancharatna.jpg";
 import LogoImg from "../assets/Logo.png";
 import DanceImg from "../assets/Dance.webp";
+import { useState, useEffect } from "react";
+
+
+
 
 
 // --- Data Definitions (UNCHANGED) ---
@@ -186,6 +190,29 @@ const SectionTitleBlock = ({
 
 export default function Home() {
 
+  const images = [
+  "/Dance.webp",
+  "/01.webp",
+  "/02.webp",
+  "/03.webp",
+];
+
+const [currentIndex, setCurrentIndex] = useState(0);
+const [isFlipping, setIsFlipping] = useState(false);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setIsFlipping(true);
+
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setIsFlipping(false);
+    }, 700); // flip duration
+  }, 3500);
+
+  return () => clearInterval(interval);
+}, []);
+
   const groupedCourses = courses.reduce((acc, course) => {
     if (!acc[course.category]) {
       acc[course.category] = [];
@@ -253,14 +280,30 @@ export default function Home() {
                 <div className="lg:col-span-5 relative group">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-sand">
 
-                    <img
-                      src="/Dance.webp"
-                      alt="Classical Dance Training"
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-[420px] object-cover"
-                    />
-                    
+                    <div className="relative w-full h-[420px] perspective-1000">
+  <div
+    className={`absolute inset-0 rounded-3xl overflow-hidden
+      transition-transform duration-700 ease-in-out
+      ${isFlipping ? "rotate-y-180" : "rotate-y-0"}`}
+    style={{ transformStyle: "preserve-3d" }}
+  >
+    {/* FRONT PAGE */}
+    <img
+      src={images[currentIndex]}
+      alt="Classical Arts Training"
+      className="absolute inset-0 w-full h-full object-cover backface-hidden"
+    />
+
+    {/* BACK PAGE */}
+    <img
+      src={images[(currentIndex + 1) % images.length]}
+      alt="Next Training"
+      className="absolute inset-0 w-full h-full object-cover rotate-y-180 backface-hidden"
+    />
+  </div>
+</div>
+
+
                     {/* Soft Overlay */}
                     <div
                       className="absolute inset-0 bg-gradient-to-t
@@ -443,7 +486,7 @@ export default function Home() {
 
 
       {/* ... (COURSES SECTION) ... */}
-      <section className="py-10 px-6 md:px-16 lg:px-24 bg-light-saffron relative overflow-hidden">
+      <section className="py-14 px-6 md:px-16 lg:px-24 bg-light-saffron relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionTitleBlock
             pretitle="Our Disciplines"
@@ -452,60 +495,93 @@ export default function Home() {
             color="text-maroon"
           />
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-10">
+
             {/* Classical Dance */}
             <div>
               <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-6 border-b-2 border-saffron pb-2">
                 Classical Dance
               </h4>
-              <div className="space-y-4">
-                {["Bharatanatyam", "Mohiniyattam", "Kuchipudi"].map((dance, index) => (
-                  <div key={dance} className="bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-all duration-300 hover:-translate-y-1">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-saffron/20 p-3 rounded-lg">
-                        <span className="text-2xl text-maroon">
-                          {["🕉️", "🌸", "🎭"][index]}
-                        </span>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-lg text-maroon mb-1">{dance}</h5>
-                        <p className="text-gray-600 text-sm">
-                          {[
-                            "Ancient temple dance form from Tamil Nadu",
-                            "Lyrical dance from Kerala with swaying movements",
-                            "Dynamic dance-drama from Andhra Pradesh"
-                          ][index]}
-                        </p>
-                      </div>
-                    </div>
+
+              <div className="space-y-5">
+                {[
+                  {
+                    name: "Bharatanatyam",
+                    desc: "Ancient temple dance form emphasizing rhythm, expression, and discipline.",
+                  },
+                  {
+                    name: "Mohiniyattam",
+                    desc: "Graceful Kerala dance form with soft movements and lyrical expression.",
+                  },
+                  {
+                    name: "Kuchipudi",
+                    desc: "Dynamic dance-drama tradition blending narrative and movement.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.name}
+                    className="bg-amber-50 rounded-xl p-6 shadow-lg 
+           border-l-4 border-saffron
+           hover:shadow-maroon/30 
+           transition-all duration-300 
+           hover:-translate-y-1"
+
+                  >
+                    <h5 className="text-lg font-bold text-maroon mb-2">
+                      {item.name}
+                    </h5>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Classical Music & Instrumental */}
+            {/* Music */}
             <div>
               <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-6 border-b-2 border-saffron pb-2">
                 Music
               </h4>
-              <div className="space-y-4">
+
+              <div className="space-y-5">
                 {[
-                  { name: "Carnatic Vocal", desc: "Training in raga, tala & compositions", icon: "🎵" },
-                  { name: "Devotional Music", desc: "Bhajans & spiritual hymns", icon: "🙏" },
-                  { name: "Violin", desc: "Carnatic style & accompaniment", icon: "🎻" },
-                  { name: "Keyboard/Piano", desc: "Indian classical & Western techniques", icon: "🎹" },
-                  { name: "Veena", desc: "Ancient string instrument training", icon: "🪕" }
-                ].map((item, index) => (
-                  <div key={item.name} className="bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-all duration-300 hover:-translate-y-1">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-saffron/20 p-3 rounded-lg">
-                        <span className="text-2xl text-maroon">{item.icon}</span>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-lg text-maroon mb-1">{item.name}</h5>
-                        <p className="text-gray-600 text-sm">{item.desc}</p>
-                      </div>
-                    </div>
+                  {
+                    name: "Carnatic Vocal",
+                    desc: "Training in raga, tala, kritis, and classical improvisation.",
+                  },
+                  {
+                    name: "Devotional Music",
+                    desc: "Bhajans and spiritual compositions rooted in tradition.",
+                  },
+                  {
+                    name: "Violin",
+                    desc: "Carnatic violin techniques and accompaniment training.",
+                  },
+                  {
+                    name: "Keyboard / Piano",
+                    desc: "Blending Indian classical concepts with modern keyboard techniques.",
+                  },
+                  {
+                    name: "Veena",
+                    desc: "Ancient string instrument focusing on gamaka and melody.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.name}
+                    className="bg-amber-50 rounded-xl p-6 shadow-lg 
+           border-l-4 border-saffron
+           hover:shadow-maroon/30 
+           transition-all duration-300 
+           hover:-translate-y-1"
+
+                  >
+                    <h5 className="text-lg font-bold text-maroon mb-2">
+                      {item.name}
+                    </h5>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -514,31 +590,48 @@ export default function Home() {
             {/* Percussion & Fine Arts */}
             <div>
               <h4 className="text-2xl font-serif-traditional text-maroon font-semibold mb-6 border-b-2 border-saffron pb-2">
-                Percussion & Arts
+                Percussion & Fine Arts
               </h4>
-              <div className="space-y-4">
+
+              <div className="space-y-5">
                 {[
-                  { name: "Tabla", desc: "North Indian percussion training", icon: "🥁" },
-                  { name: "Mridangam", desc: "Carnatic rhythm & complex patterns", icon: "🪘" },
-                  { name: "Drawing & Painting", desc: "Traditional & contemporary art forms", icon: "🎨" }
-                ].map((item, index) => (
-                  <div key={item.name} className="bg-white rounded-xl p-5 shadow-lg border border-gray-100 hover:shadow-maroon/20 transition-all duration-300 hover:-translate-y-1">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-saffron/20 p-3 rounded-lg">
-                        <span className="text-2xl text-maroon">{item.icon}</span>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-lg text-maroon mb-1">{item.name}</h5>
-                        <p className="text-gray-600 text-sm">{item.desc}</p>
-                      </div>
-                    </div>
+                  {
+                    name: "Tabla",
+                    desc: "North Indian percussion focusing on tala and improvisation.",
+                  },
+                  {
+                    name: "Mridangam",
+                    desc: "Core Carnatic rhythm training with advanced laya patterns.",
+                  },
+                  {
+                    name: "Drawing & Painting",
+                    desc: "Traditional and contemporary visual arts instruction.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.name}
+                    className="bg-amber-50 rounded-xl p-6 shadow-lg 
+           border-l-4 border-saffron
+           hover:shadow-maroon/30 
+           transition-all duration-300 
+           hover:-translate-y-1"
+
+                  >
+                    <h5 className="text-lg font-bold text-maroon mb-2">
+                      {item.name}
+                    </h5>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
 
 
       {/* ... (TIMELINE SECTION) ... */}
